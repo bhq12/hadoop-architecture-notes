@@ -1,0 +1,15 @@
+
+MUST USE C4 Modelling!
+
+C4:
+	- Context Diagrams
+	- Container Diagrams
+	- Component Diagrams
+	- Code diagrams
+
+Element hierarchy:
+
+	- Software System
+	- Container
+	- Components
+	- Code
