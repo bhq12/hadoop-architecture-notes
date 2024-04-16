@@ -1,0 +1,1344 @@
+{
+  "configuration" : { },
+  "description" : "An example C4 model of an on-line shopping system.",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedDate" : "2024-04-16T06:44:20Z",
+  "model" : {
+    "deploymentNodes" : [ {
+      "containerInstances" : [ {
+        "containerId" : "15",
+        "deploymentGroups" : [ "Default" ],
+        "environment" : "Live",
+        "id" : "58",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "livemobileappinstance"
+        },
+        "relationships" : [ {
+          "description" : "REST API",
+          "destinationId" : "68",
+          "id" : "70",
+          "linkedRelationshipId" : "38",
+          "sourceId" : "58",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "tags" : "Container Instance"
+      } ],
+      "environment" : "Live",
+      "id" : "57",
+      "instances" : "1",
+      "name" : "Customer's Mobile Device",
+      "properties" : {
+        "structurizr.dsl.identifier" : "624b8af6-d7e4-4c14-9aa1-6dc01af3b59f"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Apple iOS or Android"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "6",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "61",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "liveinteractivewebpagesinstance"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "60",
+        "instances" : "1",
+        "name" : "Web Browser",
+        "properties" : {
+          "structurizr.dsl.identifier" : "74e12097-4b47-4fee-897d-a97baad7f6c6"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Chrome, Firefox, Safari or Edge"
+      } ],
+      "environment" : "Live",
+      "id" : "59",
+      "instances" : "1",
+      "name" : "Customer's Computer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "62fd519e-231f-4dcd-a0a7-395e33075ce7"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "MS Windows, Apple macOS or Linux"
+    }, {
+      "children" : [ {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "3",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "65",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "livewebappinstance"
+            },
+            "relationships" : [ {
+              "description" : "Deliver content to the customer's browser.",
+              "destinationId" : "61",
+              "id" : "66",
+              "linkedRelationshipId" : "24",
+              "sourceId" : "65",
+              "technology" : "HTTPS"
+            }, {
+              "description" : "Send messages",
+              "destinationId" : "68",
+              "id" : "69",
+              "linkedRelationshipId" : "26",
+              "sourceId" : "65",
+              "technology" : "RMI"
+            } ],
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "64",
+          "instances" : "1",
+          "name" : "Apache TomEE",
+          "properties" : {
+            "structurizr.dsl.identifier" : "7f5c385a-bbef-429c-a289-186f12732290"
+          },
+          "tags" : "Element,Deployment Node",
+          "technology" : "Apache TomEE 8.0"
+        } ],
+        "environment" : "Live",
+        "id" : "63",
+        "instances" : "4",
+        "name" : "Web Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "c6d95748-5ff4-4b38-9db9-1768287d180c"
+        },
+        "tags" : "Element,Deployment Node,",
+        "technology" : "Ubuntu 20.04 LTS"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "8",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "68",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "liveappserverinstance"
+          },
+          "relationships" : [ {
+            "description" : "Queries & Updates",
+            "destinationId" : "73",
+            "id" : "74",
+            "linkedRelationshipId" : "39",
+            "sourceId" : "68",
+            "technology" : "JPA"
+          }, {
+            "description" : "Queries & Updates",
+            "destinationId" : "77",
+            "id" : "78",
+            "linkedRelationshipId" : "39",
+            "sourceId" : "68",
+            "technology" : "JPA"
+          }, {
+            "description" : "Customer Browsing History and Product Suggestions",
+            "destinationId" : "82",
+            "id" : "83",
+            "linkedRelationshipId" : "50",
+            "sourceId" : "68",
+            "technology" : "RMI"
+          }, {
+            "description" : "Get Product Suggestion",
+            "destinationId" : "82",
+            "id" : "84",
+            "linkedRelationshipId" : "53",
+            "sourceId" : "68",
+            "technology" : "RMI"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "67",
+        "instances" : "8",
+        "name" : "Application Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "8aa97bbb-9952-4eae-83bf-ab2b94d5379b"
+        },
+        "tags" : "Element,Deployment Node,",
+        "technology" : "Ubuntu 20.04 LTS & Java 17 LTS"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "14",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "73",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "liveappdatabaseinstance"
+            },
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "72",
+          "instances" : "1",
+          "name" : "MySQL Primary",
+          "properties" : {
+            "structurizr.dsl.identifier" : "primarydatabaseserver"
+          },
+          "relationships" : [ {
+            "description" : "Replicates Data",
+            "destinationId" : "76",
+            "id" : "79",
+            "properties" : {
+              "structurizr.dsl.identifier" : "7b303dfc-f4fa-4d4f-8314-ec39b86e47a4"
+            },
+            "sourceId" : "72",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Deployment Node",
+          "technology" : "MySQL 8.0"
+        } ],
+        "environment" : "Live",
+        "id" : "71",
+        "instances" : "1",
+        "name" : "Application Database Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "a5d6170a-28db-4b4a-a77a-91ef9d22e4c8"
+        },
+        "tags" : "Element,Deployment Node",
+        "technology" : "Ubuntu 20.04 LTS"
+      }, {
+        "children" : [ {
+          "containerInstances" : [ {
+            "containerId" : "14",
+            "deploymentGroups" : [ "Default" ],
+            "environment" : "Live",
+            "id" : "77",
+            "instanceId" : 1,
+            "properties" : {
+              "structurizr.dsl.identifier" : "liveseondarydatabaseinstance"
+            },
+            "tags" : "Container Instance"
+          } ],
+          "environment" : "Live",
+          "id" : "76",
+          "instances" : "1",
+          "name" : "MySQL Secondary",
+          "properties" : {
+            "structurizr.dsl.identifier" : "secondarydatabaseserver"
+          },
+          "tags" : "Element,Deployment Node,failover",
+          "technology" : "MySQL 8.0"
+        } ],
+        "environment" : "Live",
+        "id" : "75",
+        "instances" : "1",
+        "name" : "Secondary Database Server",
+        "properties" : {
+          "structurizr.dsl.identifier" : "09834a1d-9088-438b-a75e-574eedf8a0aa"
+        },
+        "tags" : "Element,Deployment Node,failover",
+        "technology" : "Ubuntu 20.04 LTS"
+      } ],
+      "environment" : "Live",
+      "id" : "62",
+      "instances" : "1",
+      "name" : "Sahara",
+      "properties" : {
+        "structurizr.dsl.identifier" : "62ba942c-4b26-4d15-aa32-87d2fc61898d"
+      },
+      "tags" : "Element,Deployment Node",
+      "technology" : "Sahara eCommerce Data Centre"
+    }, {
+      "children" : [ {
+        "containerInstances" : [ {
+          "containerId" : "18",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "82",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "livedataminingintfinstance"
+          },
+          "relationships" : [ {
+            "description" : "Get Product Recommendations",
+            "destinationId" : "86",
+            "id" : "87",
+            "linkedRelationshipId" : "55",
+            "sourceId" : "82"
+          }, {
+            "description" : "Store Customer Browsing History",
+            "destinationId" : "89",
+            "id" : "91",
+            "linkedRelationshipId" : "54",
+            "sourceId" : "82",
+            "technology" : "JDBC"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "81",
+        "instances" : "1",
+        "name" : "Data Mining API",
+        "properties" : {
+          "structurizr.dsl.identifier" : "2f7961f2-45b6-4587-ada3-1bade0e94a19"
+        },
+        "tags" : "Element,Deployment Node,Oracle Cloud Infrastructure - Virtual Machine"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "17",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "86",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "livedataminingprocessinstance"
+          },
+          "relationships" : [ {
+            "description" : "Perform Data Mining",
+            "destinationId" : "89",
+            "id" : "90",
+            "linkedRelationshipId" : "56",
+            "sourceId" : "86",
+            "technology" : "JDBC"
+          } ],
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "85",
+        "instances" : "1",
+        "name" : "Machine Learning Process",
+        "properties" : {
+          "structurizr.dsl.identifier" : "975dba6d-afaa-46b8-a9e2-87676279093d"
+        },
+        "tags" : "Element,Deployment Node,Oracle Cloud Infrastructure - Oracle Machine Learning"
+      }, {
+        "containerInstances" : [ {
+          "containerId" : "19",
+          "deploymentGroups" : [ "Default" ],
+          "environment" : "Live",
+          "id" : "89",
+          "instanceId" : 1,
+          "properties" : {
+            "structurizr.dsl.identifier" : "livedatawarehouseinstance"
+          },
+          "tags" : "Container Instance"
+        } ],
+        "environment" : "Live",
+        "id" : "88",
+        "instances" : "1",
+        "name" : "Data Warehouse",
+        "properties" : {
+          "structurizr.dsl.identifier" : "f6319ace-6a4c-4267-aa65-e434ba87075d"
+        },
+        "tags" : "Element,Deployment Node,Oracle Cloud Infrastructure - Autonomous Data Warehouse Cloud Service"
+      } ],
+      "environment" : "Live",
+      "id" : "80",
+      "instances" : "1",
+      "name" : "Data Mining Service",
+      "properties" : {
+        "structurizr.dsl.identifier" : "7d2cba13-b376-4ec1-8d01-7b8356ce6414"
+      },
+      "tags" : "Element,Deployment Node,Oracle Cloud Infrastructure - Cloud Service",
+      "technology" : "Oracle Cloud Infrastructure"
+    } ],
+    "people" : [ {
+      "description" : "Someone who shops at the Sahara on-line store.",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "Customer",
+      "properties" : {
+        "structurizr.dsl.identifier" : "customer"
+      },
+      "relationships" : [ {
+        "description" : "Search, browse and purchase products.",
+        "destinationId" : "2",
+        "id" : "20",
+        "properties" : {
+          "structurizr.dsl.identifier" : "0b8e6bbf-5db2-4d43-a777-5d500d987250"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Search, browse and purchase products.",
+        "destinationId" : "3",
+        "id" : "21",
+        "properties" : {
+          "structurizr.dsl.identifier" : "1ae3f1af-69f0-423a-a5a0-7c99df57c914"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      }, {
+        "description" : "View product details and their 3d view.",
+        "destinationId" : "6",
+        "id" : "22",
+        "properties" : {
+          "structurizr.dsl.identifier" : "ebbe0e19-ba1f-473b-940a-41ba4a443c35"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Search, browse and purchase products.",
+        "destinationId" : "15",
+        "id" : "23",
+        "properties" : {
+          "structurizr.dsl.identifier" : "9aa41747-d60c-4d0c-8498-e69cf6a84715"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Person"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "components" : [ {
+          "description" : "Customers can search and browse for products, and add them to their shopping cart.",
+          "documentation" : { },
+          "id" : "4",
+          "name" : "Product Browsing",
+          "properties" : {
+            "structurizr.dsl.identifier" : "browsing"
+          },
+          "relationships" : [ {
+            "description" : "Uses",
+            "destinationId" : "5",
+            "id" : "27",
+            "properties" : {
+              "structurizr.dsl.identifier" : "a6d166da-f5e3-493f-a898-5006bc4c4d17"
+            },
+            "sourceId" : "4",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Add items to cart.",
+            "destinationId" : "9",
+            "id" : "28",
+            "properties" : {
+              "structurizr.dsl.identifier" : "f6a76915-3a82-4e1f-93ea-ade23f36db1f"
+            },
+            "sourceId" : "4",
+            "tags" : "Relationship",
+            "technology" : "RMI"
+          }, {
+            "description" : "Add items to cart.",
+            "destinationId" : "8",
+            "id" : "29",
+            "linkedRelationshipId" : "28",
+            "sourceId" : "4",
+            "technology" : "RMI"
+          }, {
+            "description" : "Find products.",
+            "destinationId" : "12",
+            "id" : "31",
+            "properties" : {
+              "structurizr.dsl.identifier" : "0a09b5f3-263d-4ee3-a27a-21a1d8b7f457"
+            },
+            "sourceId" : "4",
+            "tags" : "Relationship",
+            "technology" : "RMI"
+          }, {
+            "description" : "Identify customer.",
+            "destinationId" : "10",
+            "id" : "33",
+            "properties" : {
+              "structurizr.dsl.identifier" : "848197fc-7e64-4ffb-9097-ecf5f96f0f27"
+            },
+            "sourceId" : "4",
+            "tags" : "Relationship",
+            "technology" : "RMI"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "JSF"
+        }, {
+          "description" : "Customers can view the contents of their shopping cart and checkout.",
+          "documentation" : { },
+          "id" : "5",
+          "name" : "Shopping Cart View",
+          "properties" : {
+            "structurizr.dsl.identifier" : "cartview"
+          },
+          "relationships" : [ {
+            "description" : "Display cart details.",
+            "destinationId" : "9",
+            "id" : "35",
+            "properties" : {
+              "structurizr.dsl.identifier" : "c4f189e1-ccca-4115-988f-eb5f00dc2cff"
+            },
+            "sourceId" : "5",
+            "tags" : "Relationship",
+            "technology" : "RMI"
+          }, {
+            "description" : "Display cart details.",
+            "destinationId" : "8",
+            "id" : "36",
+            "linkedRelationshipId" : "35",
+            "sourceId" : "5",
+            "technology" : "RMI"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "JSF"
+        } ],
+        "description" : "Delivers the web front-end for the on-line store.",
+        "documentation" : { },
+        "id" : "3",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapp"
+        },
+        "relationships" : [ {
+          "description" : "Deliver content to the customer's browser.",
+          "destinationId" : "6",
+          "id" : "24",
+          "properties" : {
+            "structurizr.dsl.identifier" : "b83881ec-db49-4529-8a2f-53af23846a37"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Download to customer's browser.",
+          "destinationId" : "7",
+          "id" : "25",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9e009af2-2f77-42ab-8a15-f1658724f4ad"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship",
+          "technology" : "HTTPS"
+        }, {
+          "description" : "Send messages",
+          "destinationId" : "8",
+          "id" : "26",
+          "properties" : {
+            "structurizr.dsl.identifier" : "2faff577-6b4b-435b-bc4e-394c8a7ba521"
+          },
+          "sourceId" : "3",
+          "tags" : "Relationship",
+          "technology" : "RMI"
+        }, {
+          "description" : "Add items to cart.",
+          "destinationId" : "9",
+          "id" : "30",
+          "linkedRelationshipId" : "28",
+          "sourceId" : "3",
+          "technology" : "RMI"
+        }, {
+          "description" : "Find products.",
+          "destinationId" : "12",
+          "id" : "32",
+          "linkedRelationshipId" : "31",
+          "sourceId" : "3",
+          "technology" : "RMI"
+        }, {
+          "description" : "Identify customer.",
+          "destinationId" : "10",
+          "id" : "34",
+          "linkedRelationshipId" : "33",
+          "sourceId" : "3",
+          "technology" : "RMI"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "J2EE Server"
+      }, {
+        "components" : [ {
+          "description" : "Provides interactive 3d views of products.",
+          "documentation" : { },
+          "id" : "7",
+          "name" : "Product Animator",
+          "properties" : {
+            "structurizr.dsl.identifier" : "productanimator"
+          },
+          "tags" : "Element,Component",
+          "technology" : "JavaScript"
+        } ],
+        "description" : "Provides the environment in which customers can view products",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Interactive Web Pages",
+        "properties" : {
+          "structurizr.dsl.identifier" : "browserapp"
+        },
+        "tags" : "Element,Container,browser",
+        "technology" : "JSF & JavaScript"
+      }, {
+        "components" : [ {
+          "description" : "Holds products that customer may purchase.",
+          "documentation" : { },
+          "id" : "9",
+          "name" : "Shopping Cart",
+          "properties" : {
+            "structurizr.dsl.identifier" : "cart"
+          },
+          "relationships" : [ {
+            "description" : "Uses",
+            "destinationId" : "10",
+            "id" : "40",
+            "properties" : {
+              "structurizr.dsl.identifier" : "18370040-9659-4115-b331-ca69c1fb491b"
+            },
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Uses",
+            "destinationId" : "11",
+            "id" : "41",
+            "properties" : {
+              "structurizr.dsl.identifier" : "c87a6505-758d-4bda-8a6b-3fa7e7012818"
+            },
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Uses",
+            "destinationId" : "12",
+            "id" : "42",
+            "properties" : {
+              "structurizr.dsl.identifier" : "3ac337c0-02cc-46a7-9387-f33a7b01fac3"
+            },
+            "sourceId" : "9",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Store cart state between user events.",
+            "destinationId" : "14",
+            "id" : "43",
+            "properties" : {
+              "structurizr.dsl.identifier" : "adb63a87-5213-42e5-a0a3-672c2999762b"
+            },
+            "sourceId" : "9",
+            "tags" : "Relationship",
+            "technology" : "JPA"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Java & JPA Entity"
+        }, {
+          "description" : "Details about a customer.",
+          "documentation" : { },
+          "id" : "10",
+          "name" : "Customers",
+          "properties" : {
+            "structurizr.dsl.identifier" : "cust"
+          },
+          "relationships" : [ {
+            "description" : "Retrieve customer credentials.",
+            "destinationId" : "14",
+            "id" : "46",
+            "properties" : {
+              "structurizr.dsl.identifier" : "2309f1ce-0ac2-4b74-b2ee-ce0d70446212"
+            },
+            "sourceId" : "10",
+            "tags" : "Relationship",
+            "technology" : "JPA"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Java & JPA Entity"
+        }, {
+          "description" : "Record of completed orders.",
+          "documentation" : { },
+          "id" : "11",
+          "name" : "Orders",
+          "properties" : {
+            "structurizr.dsl.identifier" : "order"
+          },
+          "relationships" : [ {
+            "description" : "Store order details.",
+            "destinationId" : "14",
+            "id" : "45",
+            "properties" : {
+              "structurizr.dsl.identifier" : "65cf2ce1-458b-4f8e-b034-b6b99f26fa28"
+            },
+            "sourceId" : "11",
+            "tags" : "Relationship",
+            "technology" : "JPA"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Java & JPA Entity"
+        }, {
+          "description" : "Details about a product.",
+          "documentation" : { },
+          "id" : "12",
+          "name" : "Products",
+          "properties" : {
+            "structurizr.dsl.identifier" : "product"
+          },
+          "relationships" : [ {
+            "description" : "Retrieve product details.",
+            "destinationId" : "14",
+            "id" : "47",
+            "properties" : {
+              "structurizr.dsl.identifier" : "771ec39a-2bbf-49b9-99c5-bc9617e3e757"
+            },
+            "sourceId" : "12",
+            "tags" : "Relationship",
+            "technology" : "JPA"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Java & JPA Entity"
+        }, {
+          "description" : "Provides RESTful interface to use a Shopping Cart.",
+          "documentation" : { },
+          "id" : "13",
+          "name" : "Shopping Cart Controller",
+          "properties" : {
+            "structurizr.dsl.identifier" : "cartcontroller"
+          },
+          "relationships" : [ {
+            "description" : "Uses",
+            "destinationId" : "9",
+            "id" : "44",
+            "properties" : {
+              "structurizr.dsl.identifier" : "9e909e4f-d18b-4f72-9444-eac736287d6e"
+            },
+            "sourceId" : "13",
+            "tags" : "Relationship"
+          } ],
+          "tags" : "Element,Component",
+          "technology" : "Java"
+        } ],
+        "description" : "Provides backend logic for the on-line store.",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "Application Backend",
+        "properties" : {
+          "structurizr.dsl.identifier" : "appbackend"
+        },
+        "relationships" : [ {
+          "description" : "Queries & Updates",
+          "destinationId" : "14",
+          "id" : "39",
+          "properties" : {
+            "structurizr.dsl.identifier" : "8965728f-5000-4a0b-ac9b-5dc95d1083ae"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship",
+          "technology" : "JPA"
+        }, {
+          "description" : "Customer Browsing History and Product Suggestions",
+          "destinationId" : "18",
+          "id" : "50",
+          "properties" : {
+            "structurizr.dsl.identifier" : "14725b29-efb5-4b40-b0ee-c6afe8c0bac2"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship",
+          "technology" : "RMI"
+        }, {
+          "description" : "Customer Browsing History and Product Suggestions",
+          "destinationId" : "16",
+          "id" : "51",
+          "linkedRelationshipId" : "50",
+          "sourceId" : "8",
+          "technology" : "RMI"
+        }, {
+          "description" : "Get Product Suggestion",
+          "destinationId" : "18",
+          "id" : "53",
+          "properties" : {
+            "structurizr.dsl.identifier" : "1d23250c-af90-4e38-8505-08e19c5f4f6f"
+          },
+          "sourceId" : "8",
+          "tags" : "Relationship",
+          "technology" : "RMI"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Java"
+      }, {
+        "description" : "Stores customer credentials, products and orders.",
+        "documentation" : { },
+        "id" : "14",
+        "name" : "Application Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "appdb"
+        },
+        "tags" : "Element,Container,db",
+        "technology" : "MySQL"
+      }, {
+        "description" : "Mobile apps on iPhone and Android providing shopping experience.",
+        "documentation" : { },
+        "id" : "15",
+        "name" : "Mobile Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "mobileapp"
+        },
+        "relationships" : [ {
+          "description" : "REST API",
+          "destinationId" : "13",
+          "id" : "37",
+          "properties" : {
+            "structurizr.dsl.identifier" : "6c2c548c-e94b-424d-b8ec-b432c720b7c5"
+          },
+          "sourceId" : "15",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "REST API",
+          "destinationId" : "8",
+          "id" : "38",
+          "linkedRelationshipId" : "37",
+          "sourceId" : "15",
+          "technology" : "JSON/HTTPS"
+        } ],
+        "tags" : "Element,Container,mobile",
+        "technology" : "React Native"
+      } ],
+      "description" : "Allows customers to browse and search for items and to order them.",
+      "documentation" : {
+        "decisions" : [ {
+          "content" : "# 1. Independent Business Logic\n\nDate: 2023-01-06\n\n## Status\n\nAccepted\n\n## Summary\n\n*In the context of* delivering an application with multiple platform interfaces,  \n*facing* budget constraints on development costs,  \n*we decided* to implement all business logic in an independent tier of the software architecture,  \n*to achieve* consistent logical behaviour across platforms,  \n*accepting* potential complexity of interfaces to different platforms.\n\n## Context\n\n- The system is to have both mobile and web application frontends.\n- Marketing department wants a similar user experience across platforms.\n- Delivering functional requirements requires complex processing and database transactions.\n    - Product recommendations based on both a customer's history and on purchasing behaviour of similar customers.\n    - Recording all customer interactions in the application.\n- Sales department wants customers to be able to change between using mobile and web applications without interrupting their sales experience.\n- Development team has experience using Java.\n\n## Decision\n\nAll business logic will be implemented in its own tier of the software architecture.\nWeb and mobile applications will implement the interaction tier.\nThey will communicate with the backend to perform all logic processing.\nThis provides clear separation of concerns and ensures consistency of business logic across frontend applications.\nIt means the business logic only needs to be implemented once.\nThis follows good design practices and common user interface design patterns.\n\nThe business logic will be implemented in Java.\nThis suits the current development team's experience and is a common environment.\nJava has good performance characteristices.\nJava has good support for interacting with databases, to deliver the data storage and transaction processing requirements.\n\n## Consequences\n\nAdvantages\n- Separation of concerns, keeping application logic and interface logic separate.\n- Ensures consistency, if business logic is only implemented in one place.\n- Business logic can execute in a computing environment optimised for processing and transactions.\n    - Also makes load balancing easier to implement.\n\nNeutral\n- Multiple interfaces are required for different frontend applications.\n  These can be delivered through different Java libraries.\n\nDisadvantages\n- Additional complexity for the overall architecture of the system.\n",
+          "date" : "2023-01-06T00:00:00Z",
+          "format" : "Markdown",
+          "id" : "1",
+          "status" : "Accepted",
+          "title" : "Independent Business Logic"
+        }, {
+          "content" : "# 2. Implement Web Application Using JSF\n\nDate: 2023-01-09\n\n## Status\n\nAccepted\n\n## Summary\n\n*In the context of* delivering an interactive web application,  \n*facing* the need for complex backend logic,  \n*we decided* to implement the web application in JSF,  \n*to achieve* easier integration with a Java backend,  \n*accepting* the greater complexity of building JSF applications compared to some other web development frameworks.\n\n## Context\n\n- An interactive web interface is required for the project.\n- Project sponsor wants a rich user experience.\n- Marketing department wants a similar experience across platforms.\n- Development team has experience using Java.\n- Backend logic will be implemented in Java to cater for complex processing and database transactions ([ADR0001](#1)).\n- There are many JavaScript libraries available for web applications.\n- There are many web development frameworks available to create web applications.\n- Several popular frameworks are under rapid development and changes.\n\n## Decision\n\nJSF will be used to deliver the web frontend behaviour.\nIt is a stable platform for development, which has a proven performance record.\nIntegrating with the Java backend is simplified through contexts and dependency injection (CDI).\nWe can use JavaScript libraries for frontend behaviour, while writing much of the behaviour in Java.\n\nJavaScript-based web development frameworks, such as Angular or React\nwould provide similar rich interfaces to JSF.\nThe advantage of these frameworks are their popularity and familiarity with many developers.\nOne drawback is their rate of change.\nThe 3d interaction requirement still requires using an external library with these frameworks.\n\n## Consequences\n\nAdvantages\n- Data from the Java backend can easily be used in JSF through Java beans and CDI.\n- Development team has more familiarity with Java than JavaScript.\n\nNeutral\n- Communication between the web frontend and the backend can be implemented via RMI if they are on separate computing devices.\n\nDisadvantages\n- JSF is less popular amongst developers, which may lead to greater maintenance costs.\n",
+          "date" : "2023-01-09T00:00:00Z",
+          "format" : "Markdown",
+          "id" : "2",
+          "status" : "Accepted",
+          "title" : "Implement Web Application Using JSF"
+        } ],
+        "sections" : [ {
+          "content" : "## System Context\r\n\r\nCustomers can find and purchase products through Saraha eCommerce's on-line store.\r\nThe on-line store uses a data mining service to track customer behaviour and suggest related products.\r\n\r\n![](embed:context_diagram)",
+          "filename" : "01-context.md",
+          "format" : "Markdown",
+          "order" : 1,
+          "title" : ""
+        }, {
+          "content" : "## On-line Store Container Diagram\r\n\r\nCustomers can use either a web or mobile application to access the on-line store.\r\n\r\n![](embed:store_container_diagram)\r\n\r\nThe web application delivers content to the customer's browser.\r\nJSF and JavaScript provide the dynamic behaviour of the web application.\r\n\r\nBusiness logic is implemented in a separate backend tier.\r\nThe web and mobile applications provide the presentation tier of the software system.\r\nThey use the application backend to deliver logical behaviour.\r\n\r\nThe application backend stores order transaction details in an SQL database, using JPA.\r\nThe backend sends customer browsing history to a data mining service to track customer behaviour.\r\nThe data mining service provides product recommendations\r\nthat the application backend can use to provide recommendations to the presentation tier.",
+          "filename" : "02-store-container.md",
+          "format" : "Markdown",
+          "order" : 2,
+          "title" : ""
+        } ]
+      },
+      "group" : "Sahara eCommerce",
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "On-line Store",
+      "properties" : {
+        "structurizr.dsl.identifier" : "onlinestore"
+      },
+      "relationships" : [ {
+        "description" : "Customer Browsing History",
+        "destinationId" : "16",
+        "id" : "48",
+        "properties" : {
+          "structurizr.dsl.identifier" : "67bbae11-21a1-47f3-adbf-d9572becbe4c"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Get Product Suggestions",
+        "destinationId" : "16",
+        "id" : "49",
+        "properties" : {
+          "structurizr.dsl.identifier" : "68f05073-2d5b-45fe-aad9-2c9c263f29fd"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Customer Browsing History and Product Suggestions",
+        "destinationId" : "18",
+        "id" : "52",
+        "linkedRelationshipId" : "50",
+        "sourceId" : "2",
+        "technology" : "RMI"
+      } ],
+      "tags" : "Element,Software System"
+    }, {
+      "containers" : [ {
+        "description" : "Performs data mining on collected data.",
+        "documentation" : { },
+        "id" : "17",
+        "name" : "Data Mining Process",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dataminingprocess"
+        },
+        "relationships" : [ {
+          "description" : "Perform Data Mining",
+          "destinationId" : "19",
+          "id" : "56",
+          "properties" : {
+            "structurizr.dsl.identifier" : "778051fb-a15d-4fc6-b601-f332548f0482"
+          },
+          "sourceId" : "17",
+          "tags" : "Relationship",
+          "technology" : "JDBC"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Java"
+      }, {
+        "description" : "Provides interface to save data to be mined and retrieve mining results.",
+        "documentation" : { },
+        "id" : "18",
+        "name" : "Data Mining Interface",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dataminingintf"
+        },
+        "relationships" : [ {
+          "description" : "Store Customer Browsing History",
+          "destinationId" : "19",
+          "id" : "54",
+          "properties" : {
+            "structurizr.dsl.identifier" : "d16df0a7-5529-4d1d-a08f-97727784a1ef"
+          },
+          "sourceId" : "18",
+          "tags" : "Relationship",
+          "technology" : "JDBC"
+        }, {
+          "description" : "Get Product Recommendations",
+          "destinationId" : "17",
+          "id" : "55",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9ecb8760-3115-4bfc-9976-f1e81da93d53"
+          },
+          "sourceId" : "18",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "Java"
+      }, {
+        "description" : "Stores customer browsing and transaction history.",
+        "documentation" : { },
+        "id" : "19",
+        "name" : "Data Warehouse",
+        "properties" : {
+          "structurizr.dsl.identifier" : "datawarehouse"
+        },
+        "tags" : "Element,Container,db",
+        "technology" : "Oracle"
+      } ],
+      "description" : "Collects customer visit data and provides product recommendations.",
+      "documentation" : { },
+      "group" : "Sahara eCommerce",
+      "id" : "16",
+      "location" : "Unspecified",
+      "name" : "Data Mining Service",
+      "properties" : {
+        "structurizr.dsl.identifier" : "datamining"
+      },
+      "tags" : "Element,Software System,ancillary"
+    } ]
+  },
+  "name" : "Sahara eCommerce",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlICJTYWhhcmEgZUNvbW1lcmNlIiAiQW4gZXhhbXBsZSBDNCBtb2RlbCBvZiBhbiBvbi1saW5lIHNob3BwaW5nIHN5c3RlbS4iIHsKICAgIG1vZGVsIHsKICAgICAgICBjdXN0b21lciA9IHBlcnNvbiAiQ3VzdG9tZXIiICJTb21lb25lIHdobyBzaG9wcyBhdCB0aGUgU2FoYXJhIG9uLWxpbmUgc3RvcmUuIgoJCQoJCSMgU29mdHdhcmUgc3lzdGVtcywgY29udGFpbmVycyBhbmQgY29tcG9uZW50cyBmb3IgdGhlIFNhaGFyYSBlQ29tbWVyY2UgZW50ZXJwcmlzZS13aWRlIHN5c3RlbS4KCQlncm91cCAiU2FoYXJhIGVDb21tZXJjZSIgewoJCQlvbmxpbmVTdG9yZSA9IHNvZnR3YXJlU3lzdGVtICJPbi1saW5lIFN0b3JlIiAiQWxsb3dzIGN1c3RvbWVycyB0byBicm93c2UgYW5kIHNlYXJjaCBmb3IgaXRlbXMgYW5kIHRvIG9yZGVyIHRoZW0uIiB7CgkJCQkhZG9jcyBkb2NzCgkJCQkhYWRycyBhZHJzCgkJCQl3ZWJBcHAgPSBjb250YWluZXIgIldlYiBBcHBsaWNhdGlvbiIgIkRlbGl2ZXJzIHRoZSB3ZWIgZnJvbnQtZW5kIGZvciB0aGUgb24tbGluZSBzdG9yZS4iICJKMkVFIFNlcnZlciIgewojCQkJCQlzaWduSW4gPSBjb21wb25lbnQgIlNpZ24gSW4iICJBbGxvd3MgY3VzdG9tZXJzIHRvIHNpZ24gaW50byB0aGUgb24tbGluZSBzdG9yZS4gQWxzbyBwcm92aWRlcyBjdXN0b21lciByZWdpc3RyYXRpb24uIiAiSlNGIgojCQkJCQlhY2N0TWd0ID0gY29tcG9uZW50ICJBY2NvdW50IE1hbmFnZW1lbnQiICJBbGxvd3MgY3VzdG9tZXJzIHRvIG1hbmFnZSB0aGVpciBhY2NvdW50LiIgIkpTRiIKCQkJCQlicm93c2luZyA9IGNvbXBvbmVudCAiUHJvZHVjdCBCcm93c2luZyIgIkN1c3RvbWVycyBjYW4gc2VhcmNoIGFuZCBicm93c2UgZm9yIHByb2R1Y3RzLCBhbmQgYWRkIHRoZW0gdG8gdGhlaXIgc2hvcHBpbmcgY2FydC4iICJKU0YiCgkJCQkJY2FydFZpZXcgPSBjb21wb25lbnQgIlNob3BwaW5nIENhcnQgVmlldyIgIkN1c3RvbWVycyBjYW4gdmlldyB0aGUgY29udGVudHMgb2YgdGhlaXIgc2hvcHBpbmcgY2FydCBhbmQgY2hlY2tvdXQuIiAiSlNGIgoJCQkJfQoJCQkJYnJvd3NlckFwcCA9IGNvbnRhaW5lciAiSW50ZXJhY3RpdmUgV2ViIFBhZ2VzIiAiUHJvdmlkZXMgdGhlIGVudmlyb25tZW50IGluIHdoaWNoIGN1c3RvbWVycyBjYW4gdmlldyBwcm9kdWN0cyIgIkpTRiAmIEphdmFTY3JpcHQiICJicm93c2VyIiB7CgkJCQkJcHJvZHVjdEFuaW1hdG9yID0gY29tcG9uZW50ICJQcm9kdWN0IEFuaW1hdG9yIiAiUHJvdmlkZXMgaW50ZXJhY3RpdmUgM2Qgdmlld3Mgb2YgcHJvZHVjdHMuIiAiSmF2YVNjcmlwdCIKCQkJCX0KCQkJCWFwcEJhY2tlbmQgPSBjb250YWluZXIgIkFwcGxpY2F0aW9uIEJhY2tlbmQiICJQcm92aWRlcyBiYWNrZW5kIGxvZ2ljIGZvciB0aGUgb24tbGluZSBzdG9yZS4iICJKYXZhIiB7CgkJCQkJY2FydCA9IGNvbXBvbmVudCAiU2hvcHBpbmcgQ2FydCIgIkhvbGRzIHByb2R1Y3RzIHRoYXQgY3VzdG9tZXIgbWF5IHB1cmNoYXNlLiIgIkphdmEgJiBKUEEgRW50aXR5IgoJCQkJCWN1c3QgPSBjb21wb25lbnQgIkN1c3RvbWVycyIgIkRldGFpbHMgYWJvdXQgYSBjdXN0b21lci4iICJKYXZhICYgSlBBIEVudGl0eSIKCQkJCQlvcmRlciA9IGNvbXBvbmVudCAiT3JkZXJzIiAiUmVjb3JkIG9mIGNvbXBsZXRlZCBvcmRlcnMuIiAiSmF2YSAmIEpQQSBFbnRpdHkiCgkJCQkJcHJvZHVjdCA9IGNvbXBvbmVudCAiUHJvZHVjdHMiICJEZXRhaWxzIGFib3V0IGEgcHJvZHVjdC4iICJKYXZhICYgSlBBIEVudGl0eSIKCQkJCQljYXJ0Q29udHJvbGxlciA9IGNvbXBvbmVudCAiU2hvcHBpbmcgQ2FydCBDb250cm9sbGVyIiAiUHJvdmlkZXMgUkVTVGZ1bCBpbnRlcmZhY2UgdG8gdXNlIGEgU2hvcHBpbmcgQ2FydC4iICJKYXZhIgoJCQkJfQoJCQkJYXBwREIgPSBjb250YWluZXIgIkFwcGxpY2F0aW9uIERhdGFiYXNlIiAiU3RvcmVzIGN1c3RvbWVyIGNyZWRlbnRpYWxzLCBwcm9kdWN0cyBhbmQgb3JkZXJzLiIgIk15U1FMIiAiZGIiCgkJCQltb2JpbGVBcHAgPSBjb250YWluZXIgIk1vYmlsZSBBcHBsaWNhdGlvbiIgIk1vYmlsZSBhcHBzIG9uIGlQaG9uZSBhbmQgQW5kcm9pZCBwcm92aWRpbmcgc2hvcHBpbmcgZXhwZXJpZW5jZS4iICJSZWFjdCBOYXRpdmUiICJtb2JpbGUiCgkJCX0KCQkJZGF0YU1pbmluZyA9IHNvZnR3YXJlU3lzdGVtICJEYXRhIE1pbmluZyBTZXJ2aWNlIiAiQ29sbGVjdHMgY3VzdG9tZXIgdmlzaXQgZGF0YSBhbmQgcHJvdmlkZXMgcHJvZHVjdCByZWNvbW1lbmRhdGlvbnMuIiAiYW5jaWxsYXJ5IiB7CgkJCQlkYXRhTWluaW5nUHJvY2VzcyA9IGNvbnRhaW5lciAiRGF0YSBNaW5pbmcgUHJvY2VzcyIgIlBlcmZvcm1zIGRhdGEgbWluaW5nIG9uIGNvbGxlY3RlZCBkYXRhLiIgIkphdmEiCgkJCQlkYXRhTWluaW5nSW50ZiA9IGNvbnRhaW5lciAiRGF0YSBNaW5pbmcgSW50ZXJmYWNlIiAiUHJvdmlkZXMgaW50ZXJmYWNlIHRvIHNhdmUgZGF0YSB0byBiZSBtaW5lZCBhbmQgcmV0cmlldmUgbWluaW5nIHJlc3VsdHMuIiAiSmF2YSIKCQkJCWRhdGFXYXJlaG91c2UgPSBjb250YWluZXIgIkRhdGEgV2FyZWhvdXNlIiAiU3RvcmVzIGN1c3RvbWVyIGJyb3dzaW5nIGFuZCB0cmFuc2FjdGlvbiBoaXN0b3J5LiIgIk9yYWNsZSIgImRiIgoJCQl9CgkJfQoKCQkjIEN1c3RvbWVyIHVzYWdlIHJlbGF0aW9uc2hpcHMuCiAgICAgICAgY3VzdG9tZXIgLT4gb25saW5lU3RvcmUgIlNlYXJjaCwgYnJvd3NlIGFuZCBwdXJjaGFzZSBwcm9kdWN0cy4iCiAgICAgICAgY3VzdG9tZXIgLT4gd2ViQXBwICJTZWFyY2gsIGJyb3dzZSBhbmQgcHVyY2hhc2UgcHJvZHVjdHMuIiAiSFRUUFMiCgkJY3VzdG9tZXIgLT4gYnJvd3NlckFwcCAiVmlldyBwcm9kdWN0IGRldGFpbHMgYW5kIHRoZWlyIDNkIHZpZXcuIgogICAgICAgIGN1c3RvbWVyIC0+IG1vYmlsZUFwcCAiU2VhcmNoLCBicm93c2UgYW5kIHB1cmNoYXNlIHByb2R1Y3RzLiIKCQkKCQkjIFdlYiBBcHAgcmVsYXRpb25zaGlwcy4KCQl3ZWJBcHAgLT4gYnJvd3NlckFwcCAiRGVsaXZlciBjb250ZW50IHRvIHRoZSBjdXN0b21lcidzIGJyb3dzZXIuIiAiSFRUUFMiCgkJd2ViQXBwIC0+IHByb2R1Y3RBbmltYXRvciAiRG93bmxvYWQgdG8gY3VzdG9tZXIncyBicm93c2VyLiIgIkhUVFBTIgoJCXdlYkFwcCAtPiBhcHBCYWNrZW5kICJTZW5kIG1lc3NhZ2VzIiAiUk1JIgoJCWJyb3dzaW5nIC0+IGNhcnRWaWV3ICJVc2VzIgoJCWJyb3dzaW5nIC0+IGNhcnQgIkFkZCBpdGVtcyB0byBjYXJ0LiIgIlJNSSIKCQlicm93c2luZyAtPiBwcm9kdWN0ICJGaW5kIHByb2R1Y3RzLiIgIlJNSSIKCQlicm93c2luZyAtPiBjdXN0ICJJZGVudGlmeSBjdXN0b21lci4iICJSTUkiCgkJY2FydFZpZXcgLT4gY2FydCAiRGlzcGxheSBjYXJ0IGRldGFpbHMuIiAiUk1JIgoJCQoJCW1vYmlsZUFwcCAtPiBjYXJ0Q29udHJvbGxlciAiUkVTVCBBUEkiICJKU09OL0hUVFBTIgoJCQoJCSMgQXBwbGljYXRpb24gYmFja2VuZCByZWxhdGlvbnNoaXBzLgoJCWFwcEJhY2tlbmQgLT4gYXBwREIgIlF1ZXJpZXMgJiBVcGRhdGVzIiAiSlBBIgoJCWNhcnQgLT4gY3VzdCAiVXNlcyIKCQljYXJ0IC0+IG9yZGVyICJVc2VzIgoJCWNhcnQgLT4gcHJvZHVjdCAiVXNlcyIKCQljYXJ0IC0+IGFwcERCICJTdG9yZSBjYXJ0IHN0YXRlIGJldHdlZW4gdXNlciBldmVudHMuIiAiSlBBIgoJCWNhcnRDb250cm9sbGVyIC0+IGNhcnQgIlVzZXMiCgkJb3JkZXIgLT4gYXBwREIgIlN0b3JlIG9yZGVyIGRldGFpbHMuIiAiSlBBIgoJCWN1c3QgLT4gYXBwREIgIlJldHJpZXZlIGN1c3RvbWVyIGNyZWRlbnRpYWxzLiIgIkpQQSIKCQlwcm9kdWN0IC0+IGFwcERCICJSZXRyaWV2ZSBwcm9kdWN0IGRldGFpbHMuIiAiSlBBIgoJCQoJCSMgRGF0YSBNaW5pbmcgU2VydmljZSByZWxhdGlvbnNoaXBzLgogICAgICAgIG9ubGluZVN0b3JlIC0+IGRhdGFNaW5pbmcgIkN1c3RvbWVyIEJyb3dzaW5nIEhpc3RvcnkiCiAgICAgICAgb25saW5lU3RvcmUgLT4gZGF0YU1pbmluZyAiR2V0IFByb2R1Y3QgU3VnZ2VzdGlvbnMiCiAgICAgICAgYXBwQmFja2VuZCAtPiBkYXRhTWluaW5nSW50ZiAiQ3VzdG9tZXIgQnJvd3NpbmcgSGlzdG9yeSBhbmQgUHJvZHVjdCBTdWdnZXN0aW9ucyIgIlJNSSIKICAgICAgICBhcHBCYWNrZW5kIC0+IGRhdGFNaW5pbmdJbnRmICJHZXQgUHJvZHVjdCBTdWdnZXN0aW9uIiAiUk1JIgoJCWRhdGFNaW5pbmdJbnRmIC0+IGRhdGFXYXJlaG91c2UgIlN0b3JlIEN1c3RvbWVyIEJyb3dzaW5nIEhpc3RvcnkiICJKREJDIgoJCWRhdGFNaW5pbmdJbnRmIC0+IGRhdGFNaW5pbmdQcm9jZXNzICJHZXQgUHJvZHVjdCBSZWNvbW1lbmRhdGlvbnMiCgkJZGF0YU1pbmluZ1Byb2Nlc3MgLT4gZGF0YVdhcmVob3VzZSAiUGVyZm9ybSBEYXRhIE1pbmluZyIgIkpEQkMiCgoJCSMgUGh5c2ljYWwgYXJjaGl0ZWN0dXJlIG9mIHRoZSAnbGl2ZScgc3lzdGVtLgoJCWRlcGxveW1lbnRFbnZpcm9ubWVudCAiTGl2ZSIgewogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQ3VzdG9tZXIncyBNb2JpbGUgRGV2aWNlIiAiIiAiQXBwbGUgaU9TIG9yIEFuZHJvaWQiIHsKICAgICAgICAgICAgICAgIGxpdmVNb2JpbGVBcHBJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIG1vYmlsZUFwcAogICAgICAgICAgICB9CgogICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQ3VzdG9tZXIncyBDb21wdXRlciIgIiIgIk1TIFdpbmRvd3MsIEFwcGxlIG1hY09TIG9yIExpbnV4IiB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiV2ViIEJyb3dzZXIiICIiICJDaHJvbWUsIEZpcmVmb3gsIFNhZmFyaSBvciBFZGdlIiB7CiAgICAgICAgICAgICAgICAgICAgbGl2ZUludGVyYWN0aXZlV2ViUGFnZXNJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGJyb3dzZXJBcHAKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIlNhaGFyYSIgIiIgIlNhaGFyYSBlQ29tbWVyY2UgRGF0YSBDZW50cmUiIHsKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJXZWIgU2VydmVyIiAiIiAiVWJ1bnR1IDIwLjA0IExUUyIgIiIgNCB7CiAgICAgICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFwYWNoZSBUb21FRSIgIiIgIkFwYWNoZSBUb21FRSA4LjAiIHsKICAgICAgICAgICAgICAgICAgICAgICAgbGl2ZVdlYkFwcEluc3RhbmNlID0gY29udGFpbmVySW5zdGFuY2Ugd2ViQXBwCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoJCQkJCiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiQXBwbGljYXRpb24gU2VydmVyIiAiIiAiVWJ1bnR1IDIwLjA0IExUUyAmIEphdmEgMTcgTFRTIiAiIiA4IHsKICAgICAgICAgICAgICAgICAgICBsaXZlQXBwU2VydmVySW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBhcHBCYWNrZW5kCiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkFwcGxpY2F0aW9uIERhdGFiYXNlIFNlcnZlciIgIiIgIlVidW50dSAyMC4wNCBMVFMiIHsKICAgICAgICAgICAgICAgICAgICBwcmltYXJ5RGF0YWJhc2VTZXJ2ZXIgPSBkZXBsb3ltZW50Tm9kZSAiTXlTUUwgUHJpbWFyeSIgIiIgIk15U1FMIDguMCIgewogICAgICAgICAgICAgICAgICAgICAgICBsaXZlQXBwRGF0YWJhc2VJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGFwcERCCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJTZWNvbmRhcnkgRGF0YWJhc2UgU2VydmVyIiAiIiAiVWJ1bnR1IDIwLjA0IExUUyIgImZhaWxvdmVyIiB7CiAgICAgICAgICAgICAgICAgICAgc2Vjb25kYXJ5RGF0YWJhc2VTZXJ2ZXIgPSBkZXBsb3ltZW50Tm9kZSAiTXlTUUwgU2Vjb25kYXJ5IiAiIiAiTXlTUUwgOC4wIiAiZmFpbG92ZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgbGl2ZVNlb25kYXJ5RGF0YWJhc2VJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGFwcERCCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoJCQkJCgkJCQlwcmltYXJ5RGF0YWJhc2VTZXJ2ZXIgLT4gc2Vjb25kYXJ5RGF0YWJhc2VTZXJ2ZXIgIlJlcGxpY2F0ZXMgRGF0YSIKICAgICAgICAgICAgfQoJCQkKICAgICAgICAgICAgZGVwbG95bWVudE5vZGUgIkRhdGEgTWluaW5nIFNlcnZpY2UiICIiICJPcmFjbGUgQ2xvdWQgSW5mcmFzdHJ1Y3R1cmUiICJPcmFjbGUgQ2xvdWQgSW5mcmFzdHJ1Y3R1cmUgLSBDbG91ZCBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiRGF0YSBNaW5pbmcgQVBJIiAiIiAiIiAiT3JhY2xlIENsb3VkIEluZnJhc3RydWN0dXJlIC0gVmlydHVhbCBNYWNoaW5lIiB7CiAgICAgICAgICAgICAgICAgICAgbGl2ZURhdGFNaW5pbmdJbnRmSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBkYXRhTWluaW5nSW50ZgogICAgICAgICAgICAgICAgfQoJCQkJCiAgICAgICAgICAgICAgICBkZXBsb3ltZW50Tm9kZSAiTWFjaGluZSBMZWFybmluZyBQcm9jZXNzIiAiIiAiIiAiT3JhY2xlIENsb3VkIEluZnJhc3RydWN0dXJlIC0gT3JhY2xlIE1hY2hpbmUgTGVhcm5pbmciIHsKICAgICAgICAgICAgICAgICAgICBsaXZlRGF0YU1pbmluZ1Byb2Nlc3NJbnN0YW5jZSA9IGNvbnRhaW5lckluc3RhbmNlIGRhdGFNaW5pbmdQcm9jZXNzCiAgICAgICAgICAgICAgICB9CgkJCQkKICAgICAgICAgICAgICAgIGRlcGxveW1lbnROb2RlICJEYXRhIFdhcmVob3VzZSIgIiIgIiIgIk9yYWNsZSBDbG91ZCBJbmZyYXN0cnVjdHVyZSAtIEF1dG9ub21vdXMgRGF0YSBXYXJlaG91c2UgQ2xvdWQgU2VydmljZSIgewogICAgICAgICAgICAgICAgICAgIGxpdmVEYXRhV2FyZWhvdXNlSW5zdGFuY2UgPSBjb250YWluZXJJbnN0YW5jZSBkYXRhV2FyZWhvdXNlCgkJCQl9CgkJCX0KICAgICAgICB9CiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgb25saW5lU3RvcmUgImNvbnRleHRfZGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKIwkJCWF1dG9MYXlvdXQgbHIKICAgICAgICB9CgkJCgkJY29udGFpbmVyIG9ubGluZVN0b3JlICJzdG9yZV9jb250YWluZXJfZGlhZ3JhbSIgewoJCQlpbmNsdWRlICoKIwkJCWF1dG9MYXlvdXQgbHIKCQl9CgkJCgkJY29udGFpbmVyIGRhdGFNaW5pbmcgImRhdGFNaW5pbmdfY29udGFpbmVyX2RpYWdyYW0iIHsKCQkJaW5jbHVkZSAqCiMJCQlhdXRvTGF5b3V0IGxyCgkJfQoJCQoJCWNvbXBvbmVudCB3ZWJBcHAgIndlYkFwcF9jb21wb25lbnRfZGlhZ3JhbSIgewoJCQlpbmNsdWRlICoKIwkJCWF1dG9MYXlvdXQgbHIKCQl9CgkJCgkJY29tcG9uZW50IGFwcEJhY2tlbmQgImFwcEJhY2tlbmRfY29tcG9uZW50X2RpYWdyYW0iIHsKCQkJaW5jbHVkZSAqCiMJCQlhdXRvTGF5b3V0IGxyCgkJfQoJCQoJCWNvbXBvbmVudCBicm93c2VyQXBwICJicm93c2VyX2NvbXBvbmVudF9kaWFncmFtIiB7CgkJCWluY2x1ZGUgKgojCQkJYXV0b0xheW91dCBscgoJCX0KCiAgICAgICAgZHluYW1pYyBhcHBCYWNrZW5kICJhZGRfdG9fY2FydCIgIk92ZXJ2aWV3IG9mIGhvdyBhIGN1c3RvbWVyIHVzaW5nIHRoZSB3ZWIgaW50ZXJmYWNlIGFkZHMgYSBwcm9kdWN0IHRvIHRoZWlyIHNob3BwaW5nIGNhcnQuIiB7CiAgICAgICAgICAgIGJyb3dzaW5nIC0+IGNhcnQgIlNlbmQgcHJvZHVjdCBpZCB0byBiZSBhZGRlZCB0byBjYXJ0IGlkIiAiUk1JIgogICAgICAgICAgICBjYXJ0IC0+IGFwcERCICJzZWxlY3QgKiBmcm9tIGNhcnRzIHdoZXJlIGNhcnRpZCA9ID8iICJKUEEiCiAgICAgICAgICAgIGNhcnQgLT4gYXBwREIgInNlbGVjdCAqIGZyb20gcHJvZHVjdHMgd2hlcmUgcHJvZHVjdGlkID0gPyIgIkpQQSIKICAgICAgICAgICAgY2FydCAtPiBhcHBEQiAiaW5zZXJ0IGludG8gY2FydFByb2R1Y3RzIHZhbHVlcyAoY2FydElkLCBwcm9kdWN0SWQpIiAiSlBBIgogICAgICAgICAgICBjYXJ0IC0+IGJyb3dzaW5nICJDb25maXJtIHN1Y2Nlc3Mgb2YgdXBkYXRpbmcgY2FydCIgIlJNSSIKIyAgICAgICAgICAgIGF1dG9MYXlvdXQgbHIKICAgICAgICB9CgkJCgkJZGVwbG95bWVudCAqICJMaXZlIiAibGl2ZV9kZXBsb3ltZW50X2RpYWdyYW0iIHsKCQkJaW5jbHVkZSAqCiMJCQlhdXRvTGF5b3V0IGxyCgkJfQoKCQlzdHlsZXMgewoJCQllbGVtZW50IGFuY2lsbGFyeSB7CgkJCQliYWNrZ3JvdW5kICNmMmM2NzkKCQkJCS8qIGNvbG91ciBpcyB0ZXh0IGNvbG91ci4gKi8KCQkJCWNvbG91ciAjMDAwMDAwCgkJCX0KCQkJZWxlbWVudCBtb2JpbGUgewoJCQkJc2hhcGUgTW9iaWxlRGV2aWNlUG9ydHJhaXQKCQkJCWJhY2tncm91bmQgI2IzZGVmZgoJCQkJLyogY29sb3VyIGlzIHRleHQgY29sb3VyLiAqLwoJCQkJY29sb3VyICMwMDAwMDAKCQkJfQoJCQllbGVtZW50IGRiIHsKCQkJCXNoYXBlIEN5bGluZGVyCgkJCQliYWNrZ3JvdW5kICNiZmZmZGEKCQkJCS8qIGNvbG91ciBpcyB0ZXh0IGNvbG91ci4gKi8KCQkJCWNvbG91ciAjMDAwMDAwCgkJCX0KCQkJZWxlbWVudCBicm93c2VyIHsKCQkJCXNoYXBlIFdlYkJyb3dzZXIKCQkJCWJhY2tncm91bmQgI2IzZGVmZgoJCQkJLyogY29sb3VyIGlzIHRleHQgY29sb3VyLiAqLwoJCQkJY29sb3VyICMwMDAwMDAKCQkJfQoJCQllbGVtZW50IGZhaWxvdmVyIHsKCQkJCW9wYWNpdHkgNDUKCQkJfQoJCX0KCiAgICAgICAgdGhlbWVzIGRlZmF1bHQgaHR0cHM6Ly9zdGF0aWMuc3RydWN0dXJpenIuY29tL3RoZW1lcy9vcmFjbGUtY2xvdWQtaW5mcmFzdHJ1Y3R1cmUtMjAyMS4wNC4zMC90aGVtZS5qc29uCiAgICB9CiAgICAKfQo="
+  },
+  "views" : {
+    "componentViews" : [ {
+      "containerId" : "3",
+      "elements" : [ {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "5",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "webApp_component_diagram",
+      "order" : 4,
+      "relationships" : [ {
+        "id" : "27"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "36"
+      } ]
+    }, {
+      "containerId" : "8",
+      "elements" : [ {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "10",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "12",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "13",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "appBackend_component_diagram",
+      "order" : 5,
+      "relationships" : [ {
+        "id" : "30"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "47"
+      } ]
+    }, {
+      "containerId" : "6",
+      "elements" : [ {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "7",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalContainerBoundariesVisible" : false,
+      "key" : "browser_component_diagram",
+      "order" : 6,
+      "relationships" : [ {
+        "id" : "25"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "background" : "#f2c679",
+          "color" : "#000000",
+          "tag" : "ancillary"
+        }, {
+          "background" : "#b3deff",
+          "color" : "#000000",
+          "shape" : "MobileDevicePortrait",
+          "tag" : "mobile"
+        }, {
+          "background" : "#bfffda",
+          "color" : "#000000",
+          "shape" : "Cylinder",
+          "tag" : "db"
+        }, {
+          "background" : "#b3deff",
+          "color" : "#000000",
+          "shape" : "WebBrowser",
+          "tag" : "browser"
+        }, {
+          "opacity" : 45,
+          "tag" : "failover"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json", "https://static.structurizr.com/themes/oracle-cloud-infrastructure-2021.04.30/theme.json" ]
+    },
+    "containerViews" : [ {
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "6",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "8",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "15",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "store_container_diagram",
+      "order" : 2,
+      "relationships" : [ {
+        "id" : "21"
+      }, {
+        "id" : "22"
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "24"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "51"
+      } ],
+      "softwareSystemId" : "2"
+    }, {
+      "elements" : [ {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "17",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "18",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "19",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "dataMining_container_diagram",
+      "order" : 3,
+      "relationships" : [ {
+        "id" : "52"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "56"
+      } ],
+      "softwareSystemId" : "16"
+    } ],
+    "deploymentViews" : [ {
+      "elements" : [ {
+        "id" : "57",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "58",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "59",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "60",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "61",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "62",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "63",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "64",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "65",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "67",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "68",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "71",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "72",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "73",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "75",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "76",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "77",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "80",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "81",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "82",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "85",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "86",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "88",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "89",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "environment" : "Live",
+      "key" : "live_deployment_diagram",
+      "order" : 8,
+      "relationships" : [ {
+        "id" : "66"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "83"
+      }, {
+        "id" : "84"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "90"
+      }, {
+        "id" : "91"
+      } ]
+    } ],
+    "dynamicViews" : [ {
+      "description" : "Overview of how a customer using the web interface adds a product to their shopping cart.",
+      "elementId" : "8",
+      "elements" : [ {
+        "id" : "4",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "9",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "14",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "externalBoundariesVisible" : false,
+      "key" : "add_to_cart",
+      "order" : 7,
+      "relationships" : [ {
+        "description" : "Send product id to be added to cart id",
+        "id" : "28",
+        "order" : "1",
+        "response" : false
+      }, {
+        "description" : "select * from carts where cartid = ?",
+        "id" : "43",
+        "order" : "2",
+        "response" : false
+      }, {
+        "description" : "select * from products where productid = ?",
+        "id" : "43",
+        "order" : "3",
+        "response" : false
+      }, {
+        "description" : "insert into cartProducts values (cartId, productId)",
+        "id" : "43",
+        "order" : "4",
+        "response" : false
+      }, {
+        "description" : "Confirm success of updating cart",
+        "id" : "28",
+        "order" : "5",
+        "response" : true
+      } ]
+    } ],
+    "systemContextViews" : [ {
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "16",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "context_diagram",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "20"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "49"
+      } ],
+      "softwareSystemId" : "2"
+    } ]
+  }
+}

@@ -3,7 +3,7 @@ workspace "Sahara eCommerce" "An example C4 model of an on-line shopping system.
         customer = person "Customer" "Someone who shops at the Sahara on-line store."
 		
 		# Software systems, containers and components for the Sahara eCommerce enterprise-wide system.
-		enterprise "Sahara eCommerce" {
+		group "Sahara eCommerce" {
 			onlineStore = softwareSystem "On-line Store" "Allows customers to browse and search for items and to order them." {
 				!docs docs
 				!adrs adrs

@@ -18,8 +18,13 @@ workspace {
             hadoopProjectDist = container "hadoop-project-dist"
             hadoopTools = container "hadoop-tools"
             hadoopYarnProject = container "hadoop-yarn-project"
-
+            //NOTE: Unsure if these connections are true
             hadoopMiniCluster -> hadoopMapReduceProject "Runs map reduce operations"
+            
+            hadoopProject -> hadoophadoopMapReduceProject "Sends MapReduce Requests"
+            hadoopProject -> hadoophadoopMapReduceProject "Returns MapReduce Responses"
+
+            
         }
 
         user -> hadoop "Uses"
