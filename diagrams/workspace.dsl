@@ -15,10 +15,15 @@ workspace {
         operatingSystems = softwareSystem "OperatingSystems" "Recommended: Linux\n\nSupported but not recommended: Windows\n\nUnsupported: macOS" ""  {
                 tags "Operating Systems"
         }
+
+        projectManagementSystems = softwareSystem "ProjectManagementSystems" "Issue Tracking: Jira\nChange Tracking: Mailing List\nSource Control: Github" "" {
+                tags "Project Management Systems"
+        }
         
 
         hadoop -> competitors "Competes With"
         hadoop -> operatingSystems "Runs On"
+        hadoop -> projectManagementSystems "Tracked With"
     }
 
 
@@ -50,6 +55,14 @@ workspace {
             }
             element "Operating Systems" {
                 icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-operating-systems.png
+                width 250
+                height 200
+                color #000000
+                fontSize 12
+                shape RoundedBox
+            }
+            element "Project Management Systems" {
+                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-project-management-systems.png
                 width 250
                 height 200
                 color #000000

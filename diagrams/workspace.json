@@ -6,7 +6,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-04-27T06:30:15Z",
+  "lastModifiedDate" : "2024-04-27T06:52:21Z",
   "model" : {
     "people" : [ {
       "id" : "1",
@@ -28,18 +28,27 @@
       "relationships" : [ {
         "description" : "Competes With",
         "destinationId" : "3",
-        "id" : "5",
+        "id" : "6",
         "properties" : {
-          "structurizr.dsl.identifier" : "c70fb7d5-605a-4cbd-a700-241527c40be2"
+          "structurizr.dsl.identifier" : "76ac014c-fce8-445d-96b8-f5387f0b5db7"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
       }, {
         "description" : "Runs On",
         "destinationId" : "4",
-        "id" : "6",
+        "id" : "7",
         "properties" : {
-          "structurizr.dsl.identifier" : "6aa4f585-7841-48c9-9aa6-f0d9a1348ff7"
+          "structurizr.dsl.identifier" : "7f0c8d89-a363-46fa-926e-8aa7dcecf456"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Tracked With",
+        "destinationId" : "5",
+        "id" : "8",
+        "properties" : {
+          "structurizr.dsl.identifier" : "10041a5e-5d34-4559-8e55-6e8e82882bef"
         },
         "sourceId" : "2",
         "tags" : "Relationship"
@@ -65,11 +74,21 @@
         "structurizr.dsl.identifier" : "operatingsystems"
       },
       "tags" : "Element,Software System,,Operating Systems"
+    }, {
+      "description" : "Issue Tracking: Jira\nChange Tracking: Mailing List\nSource Control: Github",
+      "documentation" : { },
+      "id" : "5",
+      "location" : "Unspecified",
+      "name" : "ProjectManagementSystems",
+      "properties" : {
+        "structurizr.dsl.identifier" : "projectmanagementsystems"
+      },
+      "tags" : "Element,Software System,,Project Management Systems"
     } ]
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiTXkgZmF2b3VyaXRlIFVzZXIiCgogICAgICAgIGhhZG9vcCA9IHNvZnR3YXJlU3lzdGVtICJIYWRvb3AiICIiICIiIHsKICAgICAgICAgICAgdGFncyAiSGFkb29wIFNvZnR3YXJlIFN5c3RlbSIKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb21wZXRpdG9ycyA9IHNvZnR3YXJlU3lzdGVtICJDb21wZXRpdG9ycyIgIlNwYXJrXG5Tbm93Zmxha2VcbkRhdGFicmlja3MiICIiICB7CiAgICAgICAgICAgICAgICB0YWdzICJIYWRvb3AgQ29tcGV0aXRvcnMiCiAgICAgICAgfQoKICAgICAgICBvcGVyYXRpbmdTeXN0ZW1zID0gc29mdHdhcmVTeXN0ZW0gIk9wZXJhdGluZ1N5c3RlbXMiICJSZWNvbW1lbmRlZDogTGludXhcblxuU3VwcG9ydGVkIGJ1dCBub3QgcmVjb21tZW5kZWQ6IFdpbmRvd3NcblxuVW5zdXBwb3J0ZWQ6IG1hY09TIiAiIiAgewogICAgICAgICAgICAgICAgdGFncyAiT3BlcmF0aW5nIFN5c3RlbXMiCiAgICAgICAgfQogICAgICAgIAoKICAgICAgICBoYWRvb3AgLT4gY29tcGV0aXRvcnMgIkNvbXBldGVzIFdpdGgiCiAgICAgICAgaGFkb29wIC0+IG9wZXJhdGluZ1N5c3RlbXMgIlJ1bnMgT24iCiAgICB9CgoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGhhZG9vcCAiQ29udGV4dERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgICAgIAoKICAgICAgICAjdGhlbWVzIGh0dHBzOi8vZ2l0aHViLmNvbS9iaHExMi9iaHExMi1zdHJ1Y3R1cml6ci10aGVtZXMtcmVwb3NpdG9yeS9ibG9iL21haW4vaGFkb29wLXRoZW1lL3RoZW1lLmpzb24KICAgICAgICAjdGhlbWVzIGh0dHBzOi8vc3RhdGljLnN0cnVjdHVyaXpyLmNvbS90aGVtZXMvYW1hem9uLXdlYi1zZXJ2aWNlcy0yMDIwLjA0LjMwL3RoZW1lLmpzb24KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiSGFkb29wIFNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgICAgICAgaWNvbiBodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zL3RodW1iL2MvYzQvSGFkb29wLWxvZ28tbmV3LnBkZi9wYWdlMS0yNTAwcHgtSGFkb29wLWxvZ28tbmV3LnBkZi5qcGcKICAgICAgICAgICAgICAgIHdpZHRoIDI1MAogICAgICAgICAgICAgICAgaGVpZ2h0IDIwMAogICAgICAgICAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICAgICAgICAgICAgZm9udFNpemUgMTIKICAgICAgICAgICAgICAgIHNoYXBlIFJvdW5kZWRCb3gKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJIYWRvb3AgQ29tcGV0aXRvcnMiIHsKICAgICAgICAgICAgICAgIGljb24gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JocTEyL2JocTEyLXN0cnVjdHVyaXpyLXRoZW1lcy1yZXBvc2l0b3J5L21haW4vaGFkb29wLXRoZW1lL2hhZG9vcC1jb21wZXRpdG9ycy0yLnBuZwogICAgICAgICAgICAgICAgd2lkdGggMjUwCiAgICAgICAgICAgICAgICBoZWlnaHQgMjAwCiAgICAgICAgICAgICAgICBjb2xvciAjMDAwMDAwCiAgICAgICAgICAgICAgICBmb250U2l6ZSAxMgogICAgICAgICAgICAgICAgc2hhcGUgUm91bmRlZEJveAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIk9wZXJhdGluZyBTeXN0ZW1zIiB7CiAgICAgICAgICAgICAgICBpY29uIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9iaHExMi9iaHExMi1zdHJ1Y3R1cml6ci10aGVtZXMtcmVwb3NpdG9yeS9tYWluL2hhZG9vcC10aGVtZS9oYWRvb3Atb3BlcmF0aW5nLXN5c3RlbXMucG5nCiAgICAgICAgICAgICAgICB3aWR0aCAyNTAKICAgICAgICAgICAgICAgIGhlaWdodCAyMDAKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgICAgIGZvbnRTaXplIDEyCiAgICAgICAgICAgICAgICBzaGFwZSBSb3VuZGVkQm94CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CgogICAgY29uZmlndXJhdGlvbiB7CiAgICAgICAgc2NvcGUgc29mdHdhcmVzeXN0ZW0KICAgIH0KCn0K"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiTXkgZmF2b3VyaXRlIFVzZXIiCgogICAgICAgIGhhZG9vcCA9IHNvZnR3YXJlU3lzdGVtICJIYWRvb3AiICIiICIiIHsKICAgICAgICAgICAgdGFncyAiSGFkb29wIFNvZnR3YXJlIFN5c3RlbSIKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb21wZXRpdG9ycyA9IHNvZnR3YXJlU3lzdGVtICJDb21wZXRpdG9ycyIgIlNwYXJrXG5Tbm93Zmxha2VcbkRhdGFicmlja3MiICIiICB7CiAgICAgICAgICAgICAgICB0YWdzICJIYWRvb3AgQ29tcGV0aXRvcnMiCiAgICAgICAgfQoKICAgICAgICBvcGVyYXRpbmdTeXN0ZW1zID0gc29mdHdhcmVTeXN0ZW0gIk9wZXJhdGluZ1N5c3RlbXMiICJSZWNvbW1lbmRlZDogTGludXhcblxuU3VwcG9ydGVkIGJ1dCBub3QgcmVjb21tZW5kZWQ6IFdpbmRvd3NcblxuVW5zdXBwb3J0ZWQ6IG1hY09TIiAiIiAgewogICAgICAgICAgICAgICAgdGFncyAiT3BlcmF0aW5nIFN5c3RlbXMiCiAgICAgICAgfQoKICAgICAgICBwcm9qZWN0TWFuYWdlbWVudFN5c3RlbXMgPSBzb2Z0d2FyZVN5c3RlbSAiUHJvamVjdE1hbmFnZW1lbnRTeXN0ZW1zIiAiSXNzdWUgVHJhY2tpbmc6IEppcmFcbkNoYW5nZSBUcmFja2luZzogTWFpbGluZyBMaXN0XG5Tb3VyY2UgQ29udHJvbDogR2l0aHViIiAiIiB7CiAgICAgICAgICAgICAgICB0YWdzICJQcm9qZWN0IE1hbmFnZW1lbnQgU3lzdGVtcyIKICAgICAgICB9CiAgICAgICAgCgogICAgICAgIGhhZG9vcCAtPiBjb21wZXRpdG9ycyAiQ29tcGV0ZXMgV2l0aCIKICAgICAgICBoYWRvb3AgLT4gb3BlcmF0aW5nU3lzdGVtcyAiUnVucyBPbiIKICAgICAgICBoYWRvb3AgLT4gcHJvamVjdE1hbmFnZW1lbnRTeXN0ZW1zICJUcmFja2VkIFdpdGgiCiAgICB9CgoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGhhZG9vcCAiQ29udGV4dERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgICAgIAoKICAgICAgICAjdGhlbWVzIGh0dHBzOi8vZ2l0aHViLmNvbS9iaHExMi9iaHExMi1zdHJ1Y3R1cml6ci10aGVtZXMtcmVwb3NpdG9yeS9ibG9iL21haW4vaGFkb29wLXRoZW1lL3RoZW1lLmpzb24KICAgICAgICAjdGhlbWVzIGh0dHBzOi8vc3RhdGljLnN0cnVjdHVyaXpyLmNvbS90aGVtZXMvYW1hem9uLXdlYi1zZXJ2aWNlcy0yMDIwLjA0LjMwL3RoZW1lLmpzb24KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiSGFkb29wIFNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgICAgICAgaWNvbiBodHRwczovL3VwbG9hZC53aWtpbWVkaWEub3JnL3dpa2lwZWRpYS9jb21tb25zL3RodW1iL2MvYzQvSGFkb29wLWxvZ28tbmV3LnBkZi9wYWdlMS0yNTAwcHgtSGFkb29wLWxvZ28tbmV3LnBkZi5qcGcKICAgICAgICAgICAgICAgIHdpZHRoIDI1MAogICAgICAgICAgICAgICAgaGVpZ2h0IDIwMAogICAgICAgICAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICAgICAgICAgICAgZm9udFNpemUgMTIKICAgICAgICAgICAgICAgIHNoYXBlIFJvdW5kZWRCb3gKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJIYWRvb3AgQ29tcGV0aXRvcnMiIHsKICAgICAgICAgICAgICAgIGljb24gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JocTEyL2JocTEyLXN0cnVjdHVyaXpyLXRoZW1lcy1yZXBvc2l0b3J5L21haW4vaGFkb29wLXRoZW1lL2hhZG9vcC1jb21wZXRpdG9ycy0yLnBuZwogICAgICAgICAgICAgICAgd2lkdGggMjUwCiAgICAgICAgICAgICAgICBoZWlnaHQgMjAwCiAgICAgICAgICAgICAgICBjb2xvciAjMDAwMDAwCiAgICAgICAgICAgICAgICBmb250U2l6ZSAxMgogICAgICAgICAgICAgICAgc2hhcGUgUm91bmRlZEJveAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIk9wZXJhdGluZyBTeXN0ZW1zIiB7CiAgICAgICAgICAgICAgICBpY29uIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9iaHExMi9iaHExMi1zdHJ1Y3R1cml6ci10aGVtZXMtcmVwb3NpdG9yeS9tYWluL2hhZG9vcC10aGVtZS9oYWRvb3Atb3BlcmF0aW5nLXN5c3RlbXMucG5nCiAgICAgICAgICAgICAgICB3aWR0aCAyNTAKICAgICAgICAgICAgICAgIGhlaWdodCAyMDAKICAgICAgICAgICAgICAgIGNvbG9yICMwMDAwMDAKICAgICAgICAgICAgICAgIGZvbnRTaXplIDEyCiAgICAgICAgICAgICAgICBzaGFwZSBSb3VuZGVkQm94CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiUHJvamVjdCBNYW5hZ2VtZW50IFN5c3RlbXMiIHsKICAgICAgICAgICAgICAgIGljb24gaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JocTEyL2JocTEyLXN0cnVjdHVyaXpyLXRoZW1lcy1yZXBvc2l0b3J5L21haW4vaGFkb29wLXRoZW1lL2hhZG9vcC1wcm9qZWN0LW1hbmFnZW1lbnQtc3lzdGVtcy5wbmcKICAgICAgICAgICAgICAgIHdpZHRoIDI1MAogICAgICAgICAgICAgICAgaGVpZ2h0IDIwMAogICAgICAgICAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICAgICAgICAgICAgZm9udFNpemUgMTIKICAgICAgICAgICAgICAgIHNoYXBlIFJvdW5kZWRCb3gKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICBjb25maWd1cmF0aW9uIHsKICAgICAgICBzY29wZSBzb2Z0d2FyZXN5c3RlbQogICAgfQoKfQo="
   },
   "views" : {
     "configuration" : {
@@ -101,6 +120,14 @@
           "shape" : "RoundedBox",
           "tag" : "Operating Systems",
           "width" : 250
+        }, {
+          "color" : "#000000",
+          "fontSize" : 12,
+          "height" : 200,
+          "icon" : "https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-project-management-systems.png",
+          "shape" : "RoundedBox",
+          "tag" : "Project Management Systems",
+          "width" : 250
         } ]
       },
       "terminology" : { }
@@ -122,15 +149,21 @@
         "id" : "4",
         "x" : 590,
         "y" : 575
+      }, {
+        "id" : "5",
+        "x" : 940,
+        "y" : 570
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "ContextDiagram",
       "order" : 1,
       "paperSize" : "A5_Landscape",
       "relationships" : [ {
-        "id" : "5"
-      }, {
         "id" : "6"
+      }, {
+        "id" : "7"
+      }, {
+        "id" : "8"
       } ],
       "softwareSystemId" : "2"
     } ]
