@@ -2,32 +2,23 @@ workspace {
 
     model {
         user = person "My favourite User"
-        hadoop = softwareSystem "Hadoop" {
 
-            hadoopAssemblies = container "hadoop-assemblies"
-            hadoopBuildTools = container "hadoop-build-tools"
-            hadoopClientModules = container "hadoop-client-modules"
-            hadoopCloudStorageProject = container "hadoop-cloud-storage-project"
-            hadoopCommonProject = container "hadoop-common-project"
-            hadoopDist = container "hadoop-dist"
-            hadoopHdfsProject = container "hadoop-hdfs-project"
-            hadoopMapReduceProject = container "hadoop-mapreduce-project"
-            hadoopMavenPlugins = container "hadoop-maven-plugins"
-            hadoopMiniCluster = container "hadoop-minicluster"
-            hadoopProject = container "hadoop-project"
-            hadoopProjectDist = container "hadoop-project-dist"
-            hadoopTools = container "hadoop-tools"
-            hadoopYarnProject = container "hadoop-yarn-project"
-            //NOTE: Unsure if these connections are true
-            hadoopMiniCluster -> hadoopMapReduceProject "Runs map reduce operations"
-            
-            hadoopProject -> hadoophadoopMapReduceProject "Sends MapReduce Requests"
-            hadoopProject -> hadoophadoopMapReduceProject "Returns MapReduce Responses"
-
-            
+        hadoop = softwareSystem "Hadoop" "" "" {
+            tags "Hadoop Software System"
+                        
         }
 
-        user -> hadoop "Uses"
+        competitors = softwareSystem "Competitors" "Spark\nSnowflake\nDatabricks" ""  {
+                tags "Hadoop Competitors"
+        }
+
+        operatingSystems = softwareSystem "OperatingSystems" "Recommended: Linux\n\nSupported but not recommended: Windows\n\nUnsupported: macOS" ""  {
+                tags "Operating Systems"
+        }
+        
+
+        hadoop -> competitors "Competes With"
+        hadoop -> operatingSystems "Runs On"
     }
 
 
@@ -36,9 +27,35 @@ workspace {
             include *
         }
         
-        container hadoop "ContainerDiagram" {
-            include *
-            autoLayout lr
+
+        #themes https://github.com/bhq12/bhq12-structurizr-themes-repository/blob/main/hadoop-theme/theme.json
+        #themes https://static.structurizr.com/themes/amazon-web-services-2020.04.30/theme.json
+
+        styles {
+            element "Hadoop Software System" {
+                icon https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Hadoop-logo-new.pdf/page1-2500px-Hadoop-logo-new.pdf.jpg
+                width 250
+                height 200
+                color #000000
+                fontSize 12
+                shape RoundedBox
+            }
+            element "Hadoop Competitors" {
+                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-competitors-2.png
+                width 250
+                height 200
+                color #000000
+                fontSize 12
+                shape RoundedBox
+            }
+            element "Operating Systems" {
+                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-operating-systems.png
+                width 250
+                height 200
+                color #000000
+                fontSize 12
+                shape RoundedBox
+            }
         }
     }
 
