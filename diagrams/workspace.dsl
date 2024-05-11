@@ -1,73 +1,74 @@
 workspace {
 
     model {
-        hadoopUsers = person "Users" "Enterprise Customers\nSoftware Engineers\nData Engineers\nData Scientists" {
+        hadoopUsers = person "Users" "Software Engineers\nData Engineers\nData Scientists" {
             tags "Hadoop Users"
                         
         }
-
-        hadoopDevelopers = person "Developers" "Apache Community Developers\nEnterprises\nVolunteers" {
-            tags "Hadoop Developers"
-                        
-        }
-
-        hadoopInspiration = softwareSystem "MapReduce" "Simplified Data Processing on Large Clusters\nGoogle\n2004" {
-            tags "MapReduce Paper"
-                        
-        }
-
-        hadoopLanguage = softwareSystem "Java" "Object Oriented Programming Language" {
-            tags "Hadoop Language"
-                        
-        }
-
-        competitors = softwareSystem "Competitors" "Spark\nSnowflake\nDatabricks" ""  {
-                tags "Hadoop Competitors"
-        }
-
-        operatingSystems = softwareSystem "Operating Systems" "Recommended: Linux\n\nSupported but not recommended: Windows\n\nUnsupported: macOS" ""  {
-                tags "Operating Systems"
-        }
-
-        projectManagementSystems = softwareSystem "Project Management Systems" "Issue Tracking: Jira\nChange Tracking: Mailing List\nSource Control: Github" "" {
-                tags "Project Management Systems"
-        }
-
+ 
         hadoop = softwareSystem "Hadoop" "" "" {
 
             //TODO: Are these the containers?
             tags "Hadoop Software System"
 
-            mapReduceLayer = group "Map Reduce Project (MapReduce Layer)" {
-                hadoopJobTracker = container "Job Tracker"
-                hadoopTaskTracker = container "Task Tracker" 
+            mapReduceLayer = container "hadoop-mapreduce" "Java" {
+                hadoopJobTracker = component "Job Tracker"
+                hadoopTaskTracker = component "Task Tracker" 
             }
 
-            dataLayer = group "Hadoop HDFS Project (Data Layer)" {
-                hadoopDataNode = container "Data Node"
-                hadoopNameNode = container "Name Node"
+            dataLayer = container "hadoop-hdfs" "Java" {
+                hadoopDataNode = component "Data Node"
+                hadoopNameNode = component "Name Node"
             }
 
-            hadoopJobTracker -> hadoopTaskTracker "Schedules Map and Reduce Tasks, Sends Code"
-            hadoopJobTracker -> hadoopNameNode "Queries data locality for scheduling"
-            hadoopTaskTracker -> hadoopDataNode "Writes Reduce outputs to HDFS"
-            hadoopNameNode -> hadoopDataNode "Polls to Tracks Files, Server Locality, Replicas"
+            //hadoopJobTracker -> hadoopTaskTracker "Schedules Map and Reduce Tasks, Sends Code"
+            //hadoopJobTracker -> hadoopNameNode "Queries data locality for scheduling"
+            //hadoopTaskTracker -> hadoopDataNode "Writes Reduce outputs to HDFS"
+            //hadoopNameNode -> hadoopDataNode "Polls to Tracks Files, Server Locality, Replicas"
                         
+        }
+
+
+        hadoopCluster = deploymentEnvironment "Hadoop Cluster Deployment Diagram" {
+
+            group "Hadoop Cluster" {
+                hadoopMasterInstance = deploymentGroup "Hadoop Master Node"
+                hadoopInstance1 = deploymentGroup "Hadoop Node 1"
+                hadoopInstance2 = deploymentGroup "Hadoop Node 2"
+                hadoopInstance3 = deploymentGroup "Hadoop Node 3"
+
+                masterNode = deploymentNode "Master Node" {
+                    containerInstance mapReduceLayer hadoopMasterInstance
+                    containerInstance dataLayer hadoopMasterInstance
+                }
+
+                node1 = deploymentNode "Node 1" {
+                    containerInstance mapReduceLayer hadoopInstance1
+                    containerInstance dataLayer hadoopInstance1
+                }
+                node2 = deploymentNode "Node 2" {
+                    containerInstance mapReduceLayer hadoopInstance2
+                    containerInstance dataLayer hadoopInstance2
+                }
+
+                node3 = deploymentNode "Node 3" {
+                    containerInstance mapReduceLayer hadoopInstance3
+                    containerInstance dataLayer hadoopInstance3
+                }
+
+                masterNode -> node1 "Sends Tasks"
+                masterNode -> node2 "Sends Tasks"
+                masterNode -> node3 "Sends Tasks"
+            }
         }
 
        
 
-
-        
-
-        hadoop -> competitors "Competes With"
-        hadoop -> operatingSystems "Runs On"
-        hadoop -> projectManagementSystems "Tracked With"
-        hadoop -> hadoopUsers "Used By"
-        hadoop -> hadoopInspiration "Inspired By"
-        hadoop -> hadoopDevelopers "Developed By"
-        hadoop -> hadoopLanguage "Written In"
-
+       
+        hadoopUsers -> mapReduceLayer "Sends MapReduceJobs"
+        hadoopUsers -> DataLayer "Direct HDFS queries"
+        mapReduceLayer -> DataLayer "Queries existing data"
+        mapReduceLayer -> DataLayer "Writes MapReduce job results"
     }
 
 
@@ -80,77 +81,28 @@ workspace {
         container "Hadoop" {
             include *
         }
-        
+
+        deployment * hadoopCluster {
+            include *
+
+            animation {
+                hadoopMasterInstance
+                hadoopInstance1
+                hadoopInstance2
+                hadoopInstance3
+            }
+        }
+
         styles {
-            element "Hadoop Software System" {
-                icon https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Hadoop-logo-new.pdf/page1-2500px-Hadoop-logo-new.pdf.jpg
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
-            }
             element "Hadoop Users" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-users.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape person
-            }
-            element "MapReduce Paper" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-inspiration.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
-            }
-            element "Hadoop Developers" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-founders.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
-            }
-            element "Hadoop Language" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-language.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
-            }
-            element "Hadoop Competitors" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-competitors-2.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
-            }
-            element "Operating Systems" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-operating-systems.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
-            }
-            element "Project Management Systems" {
-                icon https://raw.githubusercontent.com/bhq12/bhq12-structurizr-themes-repository/main/hadoop-theme/hadoop-project-management-systems.png
-                width 250
-                height 200
-                color #000000
-                fontSize 12
-                shape RoundedBox
+                    width 250
+                    height 200
+                    //color #000000
+                    fontSize 12
+                    shape person
             }
         }
     }
-
-    //configuration {
-        //scope softwaresystem
-    //}
+    
 
 }
