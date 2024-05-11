@@ -10,6 +10,9 @@ Components:
 
 
 
+Custom Data transfer protocol over TCP
+
+
 
 NOTES FROM FIRST TRY DIAGRAM:
 

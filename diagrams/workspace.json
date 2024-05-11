@@ -4,24 +4,24 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-05-11T04:22:00Z",
+  "lastModifiedDate" : "2024-05-11T05:29:42Z",
   "model" : {
     "deploymentNodes" : [ {
       "containerInstances" : [ {
-        "containerId" : "10",
+        "containerId" : "11",
         "deploymentGroups" : [ "Hadoop Resource Master Node" ],
         "description" : "ResourceManager",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "29",
+        "id" : "32",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "6caf8f55-1580-4e9d-9c84-26a2b0ffc701"
+          "structurizr.dsl.identifier" : "5efc2607-2fd0-4dc9-871b-84693b7ab200"
         },
         "tags" : "Container Instance"
       } ],
       "environment" : "Hadoop Cluster Deployment Diagram",
       "group" : "Hadoop Cluster",
-      "id" : "28",
+      "id" : "31",
       "instances" : "1",
       "name" : "YARN Resource Master Node",
       "properties" : {
@@ -29,21 +29,21 @@
       },
       "relationships" : [ {
         "description" : "Polls CPU and Memory Usage",
-        "destinationId" : "34",
-        "id" : "56",
+        "destinationId" : "37",
+        "id" : "59",
         "properties" : {
-          "structurizr.dsl.identifier" : "ea873e3a-acc9-4eac-b387-cd850e845d75"
+          "structurizr.dsl.identifier" : "f240ee90-09b5-465e-83b1-bda0ce2a5bd7"
         },
-        "sourceId" : "28",
+        "sourceId" : "31",
         "tags" : "Relationship"
       }, {
         "description" : "Polls CPU and Memory Usage",
-        "destinationId" : "40",
-        "id" : "57",
+        "destinationId" : "43",
+        "id" : "60",
         "properties" : {
-          "structurizr.dsl.identifier" : "e37200fa-7f01-4317-9cc0-084ff3db3d30"
+          "structurizr.dsl.identifier" : "92dd8ba2-4751-4d60-8d4c-23c82fef6ca4"
         },
-        "sourceId" : "28",
+        "sourceId" : "31",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Deployment Node"
@@ -53,16 +53,16 @@
         "deploymentGroups" : [ "Hadoop Job Master Node" ],
         "description" : "JobTracker",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "31",
+        "id" : "34",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "7955303d-9bee-4dc2-810f-053ac1055349"
+          "structurizr.dsl.identifier" : "20516711-32f8-4009-965b-bdd0ea0f074b"
         },
         "tags" : "Container Instance"
       } ],
       "environment" : "Hadoop Cluster Deployment Diagram",
       "group" : "Hadoop Cluster",
-      "id" : "30",
+      "id" : "33",
       "instances" : "1",
       "name" : "MapReduce Job Master Node",
       "properties" : {
@@ -70,39 +70,39 @@
       },
       "relationships" : [ {
         "description" : "Sends Tasks",
-        "destinationId" : "34",
-        "id" : "50",
+        "destinationId" : "37",
+        "id" : "53",
         "properties" : {
-          "structurizr.dsl.identifier" : "bb193601-cd33-49ed-b7f4-7ac444c978e4"
+          "structurizr.dsl.identifier" : "1fc4feec-e601-4107-8d62-a30556db44af"
         },
-        "sourceId" : "30",
+        "sourceId" : "33",
         "tags" : "Relationship"
       }, {
         "description" : "Sends Tasks",
-        "destinationId" : "40",
-        "id" : "51",
+        "destinationId" : "43",
+        "id" : "54",
         "properties" : {
-          "structurizr.dsl.identifier" : "f4c7db2d-c467-4ef9-9d5d-24f47f9063f6"
+          "structurizr.dsl.identifier" : "011e1855-8a3f-4c96-ac0d-84e9247014d2"
         },
-        "sourceId" : "30",
+        "sourceId" : "33",
         "tags" : "Relationship"
       }, {
         "description" : "Queries data locality for task scheduling",
-        "destinationId" : "32",
-        "id" : "52",
+        "destinationId" : "35",
+        "id" : "55",
         "properties" : {
-          "structurizr.dsl.identifier" : "08c6766c-e21d-499d-9310-78c73b7826eb"
+          "structurizr.dsl.identifier" : "83771a3b-e5fa-4136-8436-09bae7480798"
         },
-        "sourceId" : "30",
+        "sourceId" : "33",
         "tags" : "Relationship"
       }, {
         "description" : "Queries node query usage for task scheduling",
-        "destinationId" : "28",
-        "id" : "53",
+        "destinationId" : "31",
+        "id" : "56",
         "properties" : {
-          "structurizr.dsl.identifier" : "debc78d6-80a9-4295-8fbc-944aec5ca734"
+          "structurizr.dsl.identifier" : "ee027d64-337f-487c-9e9d-8cd0514b80ef"
         },
-        "sourceId" : "30",
+        "sourceId" : "33",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Deployment Node"
@@ -112,16 +112,16 @@
         "deploymentGroups" : [ "Hadoop Data Master Node" ],
         "description" : "NameNode",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "33",
+        "id" : "36",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "9ee4b0e7-84ee-432b-96c3-cd74c1ca8b9e"
+          "structurizr.dsl.identifier" : "12c1e711-aa36-4f9a-a662-67f0958748c4"
         },
         "tags" : "Container Instance"
       } ],
       "environment" : "Hadoop Cluster Deployment Diagram",
       "group" : "Hadoop Cluster",
-      "id" : "32",
+      "id" : "35",
       "instances" : "1",
       "name" : "HDFS Master Node",
       "properties" : {
@@ -129,21 +129,21 @@
       },
       "relationships" : [ {
         "description" : "Polls File allocations",
-        "destinationId" : "34",
-        "id" : "54",
+        "destinationId" : "37",
+        "id" : "57",
         "properties" : {
-          "structurizr.dsl.identifier" : "ed65dd17-8391-498b-be6b-7e6634026c66"
+          "structurizr.dsl.identifier" : "24035d79-6c12-4e36-b22f-d1d8018cb5a1"
         },
-        "sourceId" : "32",
+        "sourceId" : "35",
         "tags" : "Relationship"
       }, {
         "description" : "Polls File allocations",
-        "destinationId" : "40",
-        "id" : "55",
+        "destinationId" : "43",
+        "id" : "58",
         "properties" : {
-          "structurizr.dsl.identifier" : "03a93f39-a027-44ca-9562-c388f9d8c0c4"
+          "structurizr.dsl.identifier" : "4d37eb4f-9113-42b3-9f39-b84105d57d65"
         },
-        "sourceId" : "32",
+        "sourceId" : "35",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Deployment Node"
@@ -153,35 +153,35 @@
         "deploymentGroups" : [ "Default" ],
         "description" : "Task Tracker",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "35",
+        "id" : "38",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "e580c2ef-42fb-4271-95a9-18a108da42a2"
+          "structurizr.dsl.identifier" : "2e10eebb-ffd2-4891-bc7e-68ebf8636f97"
         },
         "relationships" : [ {
           "description" : "Queries data locality for scheduling",
-          "destinationId" : "36",
-          "id" : "37",
-          "linkedRelationshipId" : "18",
-          "sourceId" : "35"
+          "destinationId" : "39",
+          "id" : "40",
+          "linkedRelationshipId" : "19",
+          "sourceId" : "38"
         }, {
-          "description" : "Queries resource availability for scheduling",
-          "destinationId" : "38",
-          "id" : "39",
-          "linkedRelationshipId" : "22",
-          "sourceId" : "35"
+          "description" : "Queries resource availability for job scheduling",
+          "destinationId" : "41",
+          "id" : "42",
+          "linkedRelationshipId" : "23",
+          "sourceId" : "38"
         }, {
           "description" : "Queries data locality for scheduling",
-          "destinationId" : "44",
-          "id" : "45",
-          "linkedRelationshipId" : "18",
-          "sourceId" : "35"
-        }, {
-          "description" : "Queries resource availability for scheduling",
           "destinationId" : "47",
-          "id" : "48",
-          "linkedRelationshipId" : "22",
-          "sourceId" : "35"
+          "id" : "49",
+          "linkedRelationshipId" : "19",
+          "sourceId" : "38"
+        }, {
+          "description" : "Queries resource availability for job scheduling",
+          "destinationId" : "50",
+          "id" : "52",
+          "linkedRelationshipId" : "23",
+          "sourceId" : "38"
         } ],
         "tags" : "Container Instance"
       }, {
@@ -189,27 +189,27 @@
         "deploymentGroups" : [ "Default" ],
         "description" : "Data Node",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "36",
+        "id" : "39",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "b776290d-1ac9-4397-a5ec-df922b83ce68"
+          "structurizr.dsl.identifier" : "34940651-268f-467f-a34c-4cf442cdcc44"
         },
         "tags" : "Container Instance"
       }, {
-        "containerId" : "10",
+        "containerId" : "11",
         "deploymentGroups" : [ "Default" ],
         "description" : "Node Manager",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "38",
+        "id" : "41",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "8ec6f287-226f-403c-8690-d03a2a731e3f"
+          "structurizr.dsl.identifier" : "049e0163-0357-4b50-a60d-35a6f96397ca"
         },
         "tags" : "Container Instance"
       } ],
       "environment" : "Hadoop Cluster Deployment Diagram",
       "group" : "Hadoop Cluster",
-      "id" : "34",
+      "id" : "37",
       "instances" : "1",
       "name" : "Node 1",
       "properties" : {
@@ -222,35 +222,35 @@
         "deploymentGroups" : [ "Default" ],
         "description" : "Task Tracker",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "41",
+        "id" : "44",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "7b24b58f-092a-491b-ac4f-ea979bc201e8"
+          "structurizr.dsl.identifier" : "0b8dcb22-591b-4b03-bf99-49d972199d9e"
         },
         "relationships" : [ {
           "description" : "Queries data locality for scheduling",
-          "destinationId" : "36",
-          "id" : "42",
-          "linkedRelationshipId" : "18",
-          "sourceId" : "41"
+          "destinationId" : "39",
+          "id" : "45",
+          "linkedRelationshipId" : "19",
+          "sourceId" : "44"
         }, {
-          "description" : "Queries resource availability for scheduling",
-          "destinationId" : "38",
-          "id" : "43",
-          "linkedRelationshipId" : "22",
-          "sourceId" : "41"
+          "description" : "Queries resource availability for job scheduling",
+          "destinationId" : "41",
+          "id" : "46",
+          "linkedRelationshipId" : "23",
+          "sourceId" : "44"
         }, {
           "description" : "Queries data locality for scheduling",
-          "destinationId" : "44",
-          "id" : "46",
-          "linkedRelationshipId" : "18",
-          "sourceId" : "41"
-        }, {
-          "description" : "Queries resource availability for scheduling",
           "destinationId" : "47",
-          "id" : "49",
-          "linkedRelationshipId" : "22",
-          "sourceId" : "41"
+          "id" : "48",
+          "linkedRelationshipId" : "19",
+          "sourceId" : "44"
+        }, {
+          "description" : "Queries resource availability for job scheduling",
+          "destinationId" : "50",
+          "id" : "51",
+          "linkedRelationshipId" : "23",
+          "sourceId" : "44"
         } ],
         "tags" : "Container Instance"
       }, {
@@ -258,27 +258,27 @@
         "deploymentGroups" : [ "Default" ],
         "description" : "Data Node",
         "environment" : "Hadoop Cluster Deployment Diagram",
-        "id" : "44",
-        "instanceId" : 1,
-        "properties" : {
-          "structurizr.dsl.identifier" : "44509b98-2523-4baf-9660-1cef5c4e9270"
-        },
-        "tags" : "Container Instance"
-      }, {
-        "containerId" : "10",
-        "deploymentGroups" : [ "Default" ],
-        "description" : "Node Manager",
-        "environment" : "Hadoop Cluster Deployment Diagram",
         "id" : "47",
         "instanceId" : 1,
         "properties" : {
-          "structurizr.dsl.identifier" : "8b1a650b-3a5d-44ae-a974-b98fa2fbb4dc"
+          "structurizr.dsl.identifier" : "864202a3-1087-44c8-8b81-fc414098847f"
+        },
+        "tags" : "Container Instance"
+      }, {
+        "containerId" : "11",
+        "deploymentGroups" : [ "Default" ],
+        "description" : "Node Manager",
+        "environment" : "Hadoop Cluster Deployment Diagram",
+        "id" : "50",
+        "instanceId" : 1,
+        "properties" : {
+          "structurizr.dsl.identifier" : "2478f7b1-f56a-4f98-83bc-7ee7147b2c0e"
         },
         "tags" : "Container Instance"
       } ],
       "environment" : "Hadoop Cluster Deployment Diagram",
       "group" : "Hadoop Cluster",
-      "id" : "40",
+      "id" : "43",
       "instances" : "1",
       "name" : "Node 2",
       "properties" : {
@@ -297,33 +297,42 @@
       "relationships" : [ {
         "description" : "Sends MapReduceJobs",
         "destinationId" : "3",
-        "id" : "58",
+        "id" : "61",
         "properties" : {
-          "structurizr.dsl.identifier" : "c9a8e464-0a83-450c-854f-1e9253fc1d4c"
+          "structurizr.dsl.identifier" : "hadoopuserstomapreducelayer"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Sends MapReduceJobs",
         "destinationId" : "2",
-        "id" : "59",
-        "linkedRelationshipId" : "58",
+        "id" : "62",
+        "linkedRelationshipId" : "61",
         "sourceId" : "1"
       }, {
         "description" : "Sends MapReduceJobs",
         "destinationId" : "4",
-        "id" : "60",
+        "id" : "63",
         "properties" : {
-          "structurizr.dsl.identifier" : "cda83030-4e2c-4d7f-abd6-54b4f8648644"
+          "structurizr.dsl.identifier" : "hadoopuserstohadoopjobclient"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Direct HDFS queries",
         "destinationId" : "7",
-        "id" : "61",
+        "id" : "64",
         "properties" : {
-          "structurizr.dsl.identifier" : "6f5b9704-a0b4-46fe-90be-30d3ef86519c"
+          "structurizr.dsl.identifier" : "hadoopuserstodatalayer"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Direct HDFS queries",
+        "destinationId" : "8",
+        "id" : "65",
+        "properties" : {
+          "structurizr.dsl.identifier" : "hadoopuserstohadoopdfsclient"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -342,7 +351,7 @@
           "relationships" : [ {
             "description" : "Sends job requests",
             "destinationId" : "5",
-            "id" : "13",
+            "id" : "14",
             "properties" : {
               "structurizr.dsl.identifier" : "sendsjobrequests"
             },
@@ -360,7 +369,7 @@
           "relationships" : [ {
             "description" : "Schedules Map and Reduce Tasks, Sends Code",
             "destinationId" : "6",
-            "id" : "14",
+            "id" : "15",
             "properties" : {
               "structurizr.dsl.identifier" : "schedulesmapreduce"
             },
@@ -369,7 +378,7 @@
           }, {
             "description" : "Queries data locality for scheduling",
             "destinationId" : "9",
-            "id" : "15",
+            "id" : "16",
             "properties" : {
               "structurizr.dsl.identifier" : "querylocality"
             },
@@ -378,23 +387,23 @@
           }, {
             "description" : "Queries data locality for scheduling",
             "destinationId" : "7",
-            "id" : "16",
-            "linkedRelationshipId" : "15",
+            "id" : "17",
+            "linkedRelationshipId" : "16",
             "sourceId" : "5"
           }, {
-            "description" : "Queries resource availability for scheduling",
-            "destinationId" : "11",
-            "id" : "19",
+            "description" : "Queries resource availability for job scheduling",
+            "destinationId" : "12",
+            "id" : "20",
             "properties" : {
               "structurizr.dsl.identifier" : "queryresource"
             },
             "sourceId" : "5",
             "tags" : "Relationship"
           }, {
-            "description" : "Queries resource availability for scheduling",
-            "destinationId" : "10",
-            "id" : "20",
-            "linkedRelationshipId" : "19",
+            "description" : "Queries resource availability for job scheduling",
+            "destinationId" : "11",
+            "id" : "21",
+            "linkedRelationshipId" : "20",
             "sourceId" : "5"
           } ],
           "tags" : "Element,Component"
@@ -407,8 +416,8 @@
           },
           "relationships" : [ {
             "description" : "Reads input data for MapReduce Operations\n\nWrites Reduce outputs to HDFS",
-            "destinationId" : "8",
-            "id" : "23",
+            "destinationId" : "10",
+            "id" : "24",
             "properties" : {
               "structurizr.dsl.identifier" : "readinputdata"
             },
@@ -417,8 +426,8 @@
           }, {
             "description" : "Reads input data for MapReduce Operations\n\nWrites Reduce outputs to HDFS",
             "destinationId" : "7",
-            "id" : "24",
-            "linkedRelationshipId" : "23",
+            "id" : "25",
+            "linkedRelationshipId" : "24",
             "sourceId" : "6"
           } ],
           "tags" : "Element,Component"
@@ -433,48 +442,48 @@
         "relationships" : [ {
           "description" : "Queries data locality for scheduling",
           "destinationId" : "9",
-          "id" : "17",
-          "linkedRelationshipId" : "15",
+          "id" : "18",
+          "linkedRelationshipId" : "16",
           "sourceId" : "3"
         }, {
           "description" : "Queries data locality for scheduling",
           "destinationId" : "7",
-          "id" : "18",
-          "linkedRelationshipId" : "15",
+          "id" : "19",
+          "linkedRelationshipId" : "16",
           "sourceId" : "3"
         }, {
-          "description" : "Queries resource availability for scheduling",
-          "destinationId" : "11",
-          "id" : "21",
-          "linkedRelationshipId" : "19",
-          "sourceId" : "3"
-        }, {
-          "description" : "Queries resource availability for scheduling",
-          "destinationId" : "10",
+          "description" : "Queries resource availability for job scheduling",
+          "destinationId" : "12",
           "id" : "22",
-          "linkedRelationshipId" : "19",
+          "linkedRelationshipId" : "20",
+          "sourceId" : "3"
+        }, {
+          "description" : "Queries resource availability for job scheduling",
+          "destinationId" : "11",
+          "id" : "23",
+          "linkedRelationshipId" : "20",
           "sourceId" : "3"
         }, {
           "description" : "Reads input data for MapReduce Operations\n\nWrites Reduce outputs to HDFS",
-          "destinationId" : "8",
-          "id" : "25",
-          "linkedRelationshipId" : "23",
+          "destinationId" : "10",
+          "id" : "26",
+          "linkedRelationshipId" : "24",
           "sourceId" : "3"
         }, {
           "description" : "Queries existing data",
           "destinationId" : "7",
-          "id" : "62",
+          "id" : "66",
           "properties" : {
-            "structurizr.dsl.identifier" : "12e2dfd0-c334-4195-b2f2-25d069130b10"
+            "structurizr.dsl.identifier" : "mapreducelayertodatalayer"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
         }, {
           "description" : "Writes MapReduce job results",
           "destinationId" : "7",
-          "id" : "63",
+          "id" : "67",
           "properties" : {
-            "structurizr.dsl.identifier" : "9cc1a42b-0fcc-496e-9afe-dcd81e6b105e"
+            "structurizr.dsl.identifier" : "mapreducelayertodatalayer2"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
@@ -484,10 +493,29 @@
         "components" : [ {
           "documentation" : { },
           "id" : "8",
-          "name" : "Data Node",
+          "name" : "DFS Client",
           "properties" : {
-            "structurizr.dsl.identifier" : "hadoopdatanode"
+            "structurizr.dsl.identifier" : "hadoopdfsclient"
           },
+          "relationships" : [ {
+            "description" : "Queries data locality",
+            "destinationId" : "9",
+            "id" : "28",
+            "properties" : {
+              "structurizr.dsl.identifier" : "dfsclientquerymaster"
+            },
+            "sourceId" : "8",
+            "tags" : "Relationship"
+          }, {
+            "description" : "Queries files directly",
+            "destinationId" : "10",
+            "id" : "29",
+            "properties" : {
+              "structurizr.dsl.identifier" : "dfsclientquerynodes"
+            },
+            "sourceId" : "8",
+            "tags" : "Relationship"
+          } ],
           "tags" : "Element,Component"
         }, {
           "documentation" : { },
@@ -498,14 +526,22 @@
           },
           "relationships" : [ {
             "description" : "Polls to Tracks Files, Server Locality, Replicas",
-            "destinationId" : "8",
-            "id" : "26",
+            "destinationId" : "10",
+            "id" : "27",
             "properties" : {
               "structurizr.dsl.identifier" : "pollsfiles"
             },
             "sourceId" : "9",
             "tags" : "Relationship"
           } ],
+          "tags" : "Element,Component"
+        }, {
+          "documentation" : { },
+          "id" : "10",
+          "name" : "Data Node",
+          "properties" : {
+            "structurizr.dsl.identifier" : "hadoopdatanode"
+          },
           "tags" : "Element,Component"
         } ],
         "description" : "Data Management",
@@ -519,25 +555,25 @@
       }, {
         "components" : [ {
           "documentation" : { },
-          "id" : "11",
+          "id" : "12",
           "name" : "Resource Manager",
           "properties" : {
             "structurizr.dsl.identifier" : "hadoopresourcemanager"
           },
           "relationships" : [ {
-            "description" : "Queries resource usage/availability\nMonitors node heartbeats",
-            "destinationId" : "12",
-            "id" : "27",
+            "description" : "Monitors resource usage/availability\nReceives node heartbeats",
+            "destinationId" : "13",
+            "id" : "30",
             "properties" : {
               "structurizr.dsl.identifier" : "queriesresourceusage"
             },
-            "sourceId" : "11",
+            "sourceId" : "12",
             "tags" : "Relationship"
           } ],
           "tags" : "Element,Component"
         }, {
           "documentation" : { },
-          "id" : "12",
+          "id" : "13",
           "name" : "Node Manager",
           "properties" : {
             "structurizr.dsl.identifier" : "hadoopnodemanager"
@@ -546,7 +582,7 @@
         } ],
         "description" : "Resource Management",
         "documentation" : { },
-        "id" : "10",
+        "id" : "11",
         "name" : "hadoop-yarn",
         "properties" : {
           "structurizr.dsl.identifier" : "resourcelayer"
@@ -565,124 +601,129 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgaGFkb29wVXNlcnMgPSBwZXJzb24gIlVzZXJzIiAiU29mdHdhcmUgRW5naW5lZXJzXG5EYXRhIEVuZ2luZWVyc1xuRGF0YSBTY2llbnRpc3RzIiB7CiAgICAgICAgICAgIHRhZ3MgIkhhZG9vcCBVc2VycyIKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgfQogCiAgICAgICAgaGFkb29wID0gc29mdHdhcmVTeXN0ZW0gIkhhZG9vcCIgIiIgIiIgewoKICAgICAgICAgICAgdGFncyAiSGFkb29wIFNvZnR3YXJlIFN5c3RlbSIKCiAgICAgICAgICAgIG1hcFJlZHVjZUxheWVyID0gY29udGFpbmVyICJoYWRvb3AtbWFwcmVkdWNlIiAiUHJvY2Vzc2luZyBNYW5hZ2VtZW50IiB7CiAgICAgICAgICAgICAgICBoYWRvb3BKb2JDbGllbnQgPSBjb21wb25lbnQgIkpvYiBDbGllbnQiCiAgICAgICAgICAgICAgICBoYWRvb3BKb2JUcmFja2VyID0gY29tcG9uZW50ICJKb2IgVHJhY2tlciIKICAgICAgICAgICAgICAgIGhhZG9vcFRhc2tUcmFja2VyID0gY29tcG9uZW50ICJUYXNrIFRyYWNrZXIiIAogICAgICAgICAgICB9CgogICAgICAgICAgICBkYXRhTGF5ZXIgPSBjb250YWluZXIgImhhZG9vcC1oZGZzIiAiRGF0YSBNYW5hZ2VtZW50IiB7CiAgICAgICAgICAgICAgICBoYWRvb3BEYXRhTm9kZSA9IGNvbXBvbmVudCAiRGF0YSBOb2RlIgogICAgICAgICAgICAgICAgaGFkb29wTmFtZU5vZGUgPSBjb21wb25lbnQgIk5hbWUgTm9kZSIKICAgICAgICAgICAgfQoKICAgICAgICAgICAgcmVzb3VyY2VMYXllciA9IGNvbnRhaW5lciAiaGFkb29wLXlhcm4iICJSZXNvdXJjZSBNYW5hZ2VtZW50IiB7CiAgICAgICAgICAgICAgICBoYWRvb3BSZXNvdXJjZU1hbmFnZXIgPSBjb21wb25lbnQgIlJlc291cmNlIE1hbmFnZXIiCiAgICAgICAgICAgICAgICBoYWRvb3BOb2RlTWFuYWdlciA9IGNvbXBvbmVudCAiTm9kZSBNYW5hZ2VyIgogICAgICAgICAgICB9CgogICAgICAgICAgICBzZW5kc0pvYlJlcXVlc3RzID0gaGFkb29wSm9iQ2xpZW50IC0+IGhhZG9vcEpvYlRyYWNrZXIgIlNlbmRzIGpvYiByZXF1ZXN0cyIKICAgICAgICAgICAgc2NoZWR1bGVzTWFwUmVkdWNlID0gaGFkb29wSm9iVHJhY2tlciAtPiBoYWRvb3BUYXNrVHJhY2tlciAiU2NoZWR1bGVzIE1hcCBhbmQgUmVkdWNlIFRhc2tzLCBTZW5kcyBDb2RlIgogICAgICAgICAgICBxdWVyeUxvY2FsaXR5ID0gaGFkb29wSm9iVHJhY2tlciAtPiBoYWRvb3BOYW1lTm9kZSAiUXVlcmllcyBkYXRhIGxvY2FsaXR5IGZvciBzY2hlZHVsaW5nIgogICAgICAgICAgICBxdWVyeVJlc291cmNlID0gaGFkb29wSm9iVHJhY2tlciAtPiBoYWRvb3BSZXNvdXJjZU1hbmFnZXIgIlF1ZXJpZXMgcmVzb3VyY2UgYXZhaWxhYmlsaXR5IGZvciBzY2hlZHVsaW5nIgogICAgICAgICAgICByZWFkSW5wdXREYXRhID0gaGFkb29wVGFza1RyYWNrZXIgLT4gaGFkb29wRGF0YU5vZGUgIlJlYWRzIGlucHV0IGRhdGEgZm9yIE1hcFJlZHVjZSBPcGVyYXRpb25zXG5cbldyaXRlcyBSZWR1Y2Ugb3V0cHV0cyB0byBIREZTIgogICAgICAgICAgICBwb2xsc0ZpbGVzID0gaGFkb29wTmFtZU5vZGUgLT4gaGFkb29wRGF0YU5vZGUgIlBvbGxzIHRvIFRyYWNrcyBGaWxlcywgU2VydmVyIExvY2FsaXR5LCBSZXBsaWNhcyIKCiAgICAgICAgICAgIHF1ZXJpZXNSZXNvdXJjZVVzYWdlID0gaGFkb29wUmVzb3VyY2VNYW5hZ2VyIC0+IGhhZG9vcE5vZGVNYW5hZ2VyICJRdWVyaWVzIHJlc291cmNlIHVzYWdlL2F2YWlsYWJpbGl0eVxuTW9uaXRvcnMgbm9kZSBoZWFydGJlYXRzIgogICAgICAgIH0KCgogICAgICAgIGhhZG9vcENsdXN0ZXIgPSBkZXBsb3ltZW50RW52aXJvbm1lbnQgIkhhZG9vcCBDbHVzdGVyIERlcGxveW1lbnQgRGlhZ3JhbSIgewoKICAgICAgICAgICAgZ3JvdXAgIkhhZG9vcCBDbHVzdGVyIiB7CiAgICAgICAgICAgICAgICBoYWRvb3BKb2JNYXN0ZXJJbnN0YW5jZSA9IGRlcGxveW1lbnRHcm91cCAiSGFkb29wIEpvYiBNYXN0ZXIgTm9kZSIKICAgICAgICAgICAgICAgIGhhZG9vcFJlc291cmNlTWFzdGVySW5zdGFuY2UgPSBkZXBsb3ltZW50R3JvdXAgIkhhZG9vcCBSZXNvdXJjZSBNYXN0ZXIgTm9kZSIKICAgICAgICAgICAgICAgIGhhZG9vcERhdGFNYXN0ZXJJbnN0YW5jZSA9IGRlcGxveW1lbnRHcm91cCAiSGFkb29wIERhdGEgTWFzdGVyIE5vZGUiCgogICAgICAgICAgICAgICAgeWFybk1hc3Rlck5vZGUgPSBkZXBsb3ltZW50Tm9kZSAiWUFSTiBSZXNvdXJjZSBNYXN0ZXIgTm9kZSIgewogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIHJlc291cmNlTGF5ZXIgaGFkb29wUmVzb3VyY2VNYXN0ZXJJbnN0YW5jZSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJSZXNvdXJjZU1hbmFnZXIiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIG1hcHJlZHVjZU1hc3Rlck5vZGUgPSBkZXBsb3ltZW50Tm9kZSAiTWFwUmVkdWNlIEpvYiBNYXN0ZXIgTm9kZSIgewogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIG1hcFJlZHVjZUxheWVyIGhhZG9vcEpvYk1hc3Rlckluc3RhbmNlIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkpvYlRyYWNrZXIiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGRhdGFNYXN0ZXJOb2RlID0gZGVwbG95bWVudE5vZGUgIkhERlMgTWFzdGVyIE5vZGUiIHsKICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBkYXRhTGF5ZXIgaGFkb29wRGF0YU1hc3Rlckluc3RhbmNlIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk5hbWVOb2RlIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBub2RlMSA9IGRlcGxveW1lbnROb2RlICJOb2RlIDEiIHsKICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBtYXBSZWR1Y2VMYXllciB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUYXNrIFRyYWNrZXIiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIGRhdGFMYXllciB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEYXRhIE5vZGUiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIHJlc291cmNlTGF5ZXIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiTm9kZSBNYW5hZ2VyIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIG5vZGUyID0gZGVwbG95bWVudE5vZGUgIk5vZGUgMiIgewogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIG1hcFJlZHVjZUxheWVyIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlRhc2sgVHJhY2tlciIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgZGF0YUxheWVyIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkRhdGEgTm9kZSIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgcmVzb3VyY2VMYXllciB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJOb2RlIE1hbmFnZXIiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIG1hcHJlZHVjZU1hc3Rlck5vZGUgLT4gbm9kZTEgIlNlbmRzIFRhc2tzIgogICAgICAgICAgICAgICAgbWFwcmVkdWNlTWFzdGVyTm9kZSAtPiBub2RlMiAiU2VuZHMgVGFza3MiCgogICAgICAgICAgICAgICAgbWFwUmVkdWNlTWFzdGVyTm9kZSAtPiBkYXRhTWFzdGVyTm9kZSAiUXVlcmllcyBkYXRhIGxvY2FsaXR5IGZvciB0YXNrIHNjaGVkdWxpbmciCiAgICAgICAgICAgICAgICBtYXBSZWR1Y2VNYXN0ZXJOb2RlIC0+IHlhcm5NYXN0ZXJOb2RlICJRdWVyaWVzIG5vZGUgcXVlcnkgdXNhZ2UgZm9yIHRhc2sgc2NoZWR1bGluZyIKCiAgICAgICAgICAgICAgICBkYXRhTWFzdGVyTm9kZSAtPiBub2RlMSAiUG9sbHMgRmlsZSBhbGxvY2F0aW9ucyIKICAgICAgICAgICAgICAgIGRhdGFNYXN0ZXJOb2RlIC0+IG5vZGUyICJQb2xscyBGaWxlIGFsbG9jYXRpb25zIgoKICAgICAgICAgICAgICAgIHlhcm5NYXN0ZXJOb2RlIC0+IG5vZGUxICJQb2xscyBDUFUgYW5kIE1lbW9yeSBVc2FnZSIKICAgICAgICAgICAgICAgIHlhcm5NYXN0ZXJOb2RlIC0+IG5vZGUyICJQb2xscyBDUFUgYW5kIE1lbW9yeSBVc2FnZSIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgIAogICAgICAgIGhhZG9vcFVzZXJzIC0+IG1hcFJlZHVjZUxheWVyICJTZW5kcyBNYXBSZWR1Y2VKb2JzIgogICAgICAgIGhhZG9vcFVzZXJzIC0+IGhhZG9vcEpvYkNsaWVudCAiU2VuZHMgTWFwUmVkdWNlSm9icyIKICAgICAgICBoYWRvb3BVc2VycyAtPiBEYXRhTGF5ZXIgIkRpcmVjdCBIREZTIHF1ZXJpZXMiCiAgICAgICAgbWFwUmVkdWNlTGF5ZXIgLT4gRGF0YUxheWVyICJRdWVyaWVzIGV4aXN0aW5nIGRhdGEiCiAgICAgICAgbWFwUmVkdWNlTGF5ZXIgLT4gRGF0YUxheWVyICJXcml0ZXMgTWFwUmVkdWNlIGpvYiByZXN1bHRzIgogICAgfQoKCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBoYWRvb3AgIkNvbnRleHREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCgogICAgICAgIGNvbnRhaW5lciAiSGFkb29wIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IG1hcFJlZHVjZUxheWVyICJNYXBSZWR1Y2VDb21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGRhdGFMYXllciAiSERGU0NvbXBvbmVudERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBjb21wb25lbnQgcmVzb3VyY2VMYXllciAiWWFybkNvbXBvbmVudERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQoKICAgICAgICBkZXBsb3ltZW50ICogaGFkb29wQ2x1c3RlciB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlIHNlbmRzSm9iUmVxdWVzdHMKICAgICAgICAgICAgZXhjbHVkZSBzY2hlZHVsZXNNYXBSZWR1Y2UKICAgICAgICAgICAgZXhjbHVkZSBxdWVyeUxvY2FsaXR5CiAgICAgICAgICAgIGV4Y2x1ZGUgcXVlcnlSZXNvdXJjZSAKICAgICAgICAgICAgZXhjbHVkZSByZWFkSW5wdXREYXRhCiAgICAgICAgICAgIGV4Y2x1ZGUgcG9sbHNGaWxlcwoKICAgICAgICAgICAgZXhjbHVkZSBxdWVyaWVzUmVzb3VyY2VVc2FnZQogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiSGFkb29wIFVzZXJzIiB7CiAgICAgICAgICAgICAgICAgICAgd2lkdGggMjUwCiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0IDIwMAogICAgICAgICAgICAgICAgICAgIC8vY29sb3IgIzAwMDAwMAogICAgICAgICAgICAgICAgICAgIGZvbnRTaXplIDEyCiAgICAgICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CiAgICAKCn0K"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgaGFkb29wVXNlcnMgPSBwZXJzb24gIlVzZXJzIiAiU29mdHdhcmUgRW5naW5lZXJzXG5EYXRhIEVuZ2luZWVyc1xuRGF0YSBTY2llbnRpc3RzIiB7CiAgICAgICAgICAgIHRhZ3MgIkhhZG9vcCBVc2VycyIKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgfQogCiAgICAgICAgaGFkb29wID0gc29mdHdhcmVTeXN0ZW0gIkhhZG9vcCIgIiIgIiIgewoKICAgICAgICAgICAgdGFncyAiSGFkb29wIFNvZnR3YXJlIFN5c3RlbSIKCiAgICAgICAgICAgIG1hcFJlZHVjZUxheWVyID0gY29udGFpbmVyICJoYWRvb3AtbWFwcmVkdWNlIiAiUHJvY2Vzc2luZyBNYW5hZ2VtZW50IiB7CiAgICAgICAgICAgICAgICBoYWRvb3BKb2JDbGllbnQgPSBjb21wb25lbnQgIkpvYiBDbGllbnQiCiAgICAgICAgICAgICAgICBoYWRvb3BKb2JUcmFja2VyID0gY29tcG9uZW50ICJKb2IgVHJhY2tlciIKICAgICAgICAgICAgICAgIGhhZG9vcFRhc2tUcmFja2VyID0gY29tcG9uZW50ICJUYXNrIFRyYWNrZXIiIAogICAgICAgICAgICB9CgogICAgICAgICAgICBkYXRhTGF5ZXIgPSBjb250YWluZXIgImhhZG9vcC1oZGZzIiAiRGF0YSBNYW5hZ2VtZW50IiB7CiAgICAgICAgICAgICAgICBoYWRvb3BEZnNDbGllbnQgPSBjb21wb25lbnQgIkRGUyBDbGllbnQiCiAgICAgICAgICAgICAgICBoYWRvb3BOYW1lTm9kZSA9IGNvbXBvbmVudCAiTmFtZSBOb2RlIgogICAgICAgICAgICAgICAgaGFkb29wRGF0YU5vZGUgPSBjb21wb25lbnQgIkRhdGEgTm9kZSIKICAgICAgICAgICAgICAgIAogICAgICAgICAgICB9CgogICAgICAgICAgICByZXNvdXJjZUxheWVyID0gY29udGFpbmVyICJoYWRvb3AteWFybiIgIlJlc291cmNlIE1hbmFnZW1lbnQiIHsKICAgICAgICAgICAgICAgIGhhZG9vcFJlc291cmNlTWFuYWdlciA9IGNvbXBvbmVudCAiUmVzb3VyY2UgTWFuYWdlciIKICAgICAgICAgICAgICAgIGhhZG9vcE5vZGVNYW5hZ2VyID0gY29tcG9uZW50ICJOb2RlIE1hbmFnZXIiCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIAogICAgICAgICAgICAvL01hcFJlZHVjZSBEZXBlbmRlbmNpZXMKICAgICAgICAgICAgc2VuZHNKb2JSZXF1ZXN0cyA9IGhhZG9vcEpvYkNsaWVudCAtPiBoYWRvb3BKb2JUcmFja2VyICJTZW5kcyBqb2IgcmVxdWVzdHMiCiAgICAgICAgICAgIHNjaGVkdWxlc01hcFJlZHVjZSA9IGhhZG9vcEpvYlRyYWNrZXIgLT4gaGFkb29wVGFza1RyYWNrZXIgIlNjaGVkdWxlcyBNYXAgYW5kIFJlZHVjZSBUYXNrcywgU2VuZHMgQ29kZSIKICAgICAgICAgICAgcXVlcnlMb2NhbGl0eSA9IGhhZG9vcEpvYlRyYWNrZXIgLT4gaGFkb29wTmFtZU5vZGUgIlF1ZXJpZXMgZGF0YSBsb2NhbGl0eSBmb3Igc2NoZWR1bGluZyIKICAgICAgICAgICAgcXVlcnlSZXNvdXJjZSA9IGhhZG9vcEpvYlRyYWNrZXIgLT4gaGFkb29wUmVzb3VyY2VNYW5hZ2VyICJRdWVyaWVzIHJlc291cmNlIGF2YWlsYWJpbGl0eSBmb3Igam9iIHNjaGVkdWxpbmciCiAgICAgICAgICAgIHJlYWRJbnB1dERhdGEgPSBoYWRvb3BUYXNrVHJhY2tlciAtPiBoYWRvb3BEYXRhTm9kZSAiUmVhZHMgaW5wdXQgZGF0YSBmb3IgTWFwUmVkdWNlIE9wZXJhdGlvbnNcblxuV3JpdGVzIFJlZHVjZSBvdXRwdXRzIHRvIEhERlMiCiAgICAgICAgICAgIAogICAgICAgICAgICAKICAgICAgICAgICAgLy9IREZTIERlcGVuZGVuY2llcwogICAgICAgICAgICBwb2xsc0ZpbGVzID0gaGFkb29wTmFtZU5vZGUgLT4gaGFkb29wRGF0YU5vZGUgIlBvbGxzIHRvIFRyYWNrcyBGaWxlcywgU2VydmVyIExvY2FsaXR5LCBSZXBsaWNhcyIKICAgICAgICAgICAgZGZzQ2xpZW50UXVlcnlNYXN0ZXIgPSBoYWRvb3BEZnNDbGllbnQgLT4gaGFkb29wTmFtZU5vZGUgIlF1ZXJpZXMgZGF0YSBsb2NhbGl0eSIKICAgICAgICAgICAgZGZzQ2xpZW50UXVlcnlOb2RlcyA9IGhhZG9vcERmc0NsaWVudCAtPiBoYWRvb3BEYXRhTm9kZSAiUXVlcmllcyBmaWxlcyBkaXJlY3RseSIKCiAgICAgICAgICAgIC8vUmVzb3VyY2UgRGVwZW5kZW5jaWVzCiAgICAgICAgICAgIHF1ZXJpZXNSZXNvdXJjZVVzYWdlID0gaGFkb29wUmVzb3VyY2VNYW5hZ2VyIC0+IGhhZG9vcE5vZGVNYW5hZ2VyICJNb25pdG9ycyByZXNvdXJjZSB1c2FnZS9hdmFpbGFiaWxpdHlcblJlY2VpdmVzIG5vZGUgaGVhcnRiZWF0cyIKICAgICAgICB9CgoKICAgICAgICBoYWRvb3BDbHVzdGVyID0gZGVwbG95bWVudEVudmlyb25tZW50ICJIYWRvb3AgQ2x1c3RlciBEZXBsb3ltZW50IERpYWdyYW0iIHsKCiAgICAgICAgICAgIGdyb3VwICJIYWRvb3AgQ2x1c3RlciIgewogICAgICAgICAgICAgICAgaGFkb29wSm9iTWFzdGVySW5zdGFuY2UgPSBkZXBsb3ltZW50R3JvdXAgIkhhZG9vcCBKb2IgTWFzdGVyIE5vZGUiCiAgICAgICAgICAgICAgICBoYWRvb3BSZXNvdXJjZU1hc3Rlckluc3RhbmNlID0gZGVwbG95bWVudEdyb3VwICJIYWRvb3AgUmVzb3VyY2UgTWFzdGVyIE5vZGUiCiAgICAgICAgICAgICAgICBoYWRvb3BEYXRhTWFzdGVySW5zdGFuY2UgPSBkZXBsb3ltZW50R3JvdXAgIkhhZG9vcCBEYXRhIE1hc3RlciBOb2RlIgoKICAgICAgICAgICAgICAgIHlhcm5NYXN0ZXJOb2RlID0gZGVwbG95bWVudE5vZGUgIllBUk4gUmVzb3VyY2UgTWFzdGVyIE5vZGUiIHsKICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSByZXNvdXJjZUxheWVyIGhhZG9vcFJlc291cmNlTWFzdGVySW5zdGFuY2UgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUmVzb3VyY2VNYW5hZ2VyIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBtYXByZWR1Y2VNYXN0ZXJOb2RlID0gZGVwbG95bWVudE5vZGUgIk1hcFJlZHVjZSBKb2IgTWFzdGVyIE5vZGUiIHsKICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBtYXBSZWR1Y2VMYXllciBoYWRvb3BKb2JNYXN0ZXJJbnN0YW5jZSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJKb2JUcmFja2VyIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBkYXRhTWFzdGVyTm9kZSA9IGRlcGxveW1lbnROb2RlICJIREZTIE1hc3RlciBOb2RlIiB7CiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgZGF0YUxheWVyIGhhZG9vcERhdGFNYXN0ZXJJbnN0YW5jZSB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJOYW1lTm9kZSIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgbm9kZTEgPSBkZXBsb3ltZW50Tm9kZSAiTm9kZSAxIiB7CiAgICAgICAgICAgICAgICAgICAgY29udGFpbmVySW5zdGFuY2UgbWFwUmVkdWNlTGF5ZXIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiVGFzayBUcmFja2VyIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBkYXRhTGF5ZXIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiRGF0YSBOb2RlIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSByZXNvdXJjZUxheWVyIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk5vZGUgTWFuYWdlciIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBub2RlMiA9IGRlcGxveW1lbnROb2RlICJOb2RlIDIiIHsKICAgICAgICAgICAgICAgICAgICBjb250YWluZXJJbnN0YW5jZSBtYXBSZWR1Y2VMYXllciB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUYXNrIFRyYWNrZXIiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIGRhdGFMYXllciB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJEYXRhIE5vZGUiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGNvbnRhaW5lckluc3RhbmNlIHJlc291cmNlTGF5ZXIgewogICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiTm9kZSBNYW5hZ2VyIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICBtYXByZWR1Y2VNYXN0ZXJOb2RlIC0+IG5vZGUxICJTZW5kcyBUYXNrcyIKICAgICAgICAgICAgICAgIG1hcHJlZHVjZU1hc3Rlck5vZGUgLT4gbm9kZTIgIlNlbmRzIFRhc2tzIgoKICAgICAgICAgICAgICAgIG1hcFJlZHVjZU1hc3Rlck5vZGUgLT4gZGF0YU1hc3Rlck5vZGUgIlF1ZXJpZXMgZGF0YSBsb2NhbGl0eSBmb3IgdGFzayBzY2hlZHVsaW5nIgogICAgICAgICAgICAgICAgbWFwUmVkdWNlTWFzdGVyTm9kZSAtPiB5YXJuTWFzdGVyTm9kZSAiUXVlcmllcyBub2RlIHF1ZXJ5IHVzYWdlIGZvciB0YXNrIHNjaGVkdWxpbmciCgogICAgICAgICAgICAgICAgZGF0YU1hc3Rlck5vZGUgLT4gbm9kZTEgIlBvbGxzIEZpbGUgYWxsb2NhdGlvbnMiCiAgICAgICAgICAgICAgICBkYXRhTWFzdGVyTm9kZSAtPiBub2RlMiAiUG9sbHMgRmlsZSBhbGxvY2F0aW9ucyIKCiAgICAgICAgICAgICAgICB5YXJuTWFzdGVyTm9kZSAtPiBub2RlMSAiUG9sbHMgQ1BVIGFuZCBNZW1vcnkgVXNhZ2UiCiAgICAgICAgICAgICAgICB5YXJuTWFzdGVyTm9kZSAtPiBub2RlMiAiUG9sbHMgQ1BVIGFuZCBNZW1vcnkgVXNhZ2UiCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAKICAgICAgICBoYWRvb3BVc2Vyc1RvbWFwUmVkdWNlTGF5ZXIgPSBoYWRvb3BVc2VycyAtPiBtYXBSZWR1Y2VMYXllciAiU2VuZHMgTWFwUmVkdWNlSm9icyIKICAgICAgICBoYWRvb3BVc2Vyc1RvaGFkb29wSm9iQ2xpZW50ID0gaGFkb29wVXNlcnMgLT4gaGFkb29wSm9iQ2xpZW50ICJTZW5kcyBNYXBSZWR1Y2VKb2JzIgogICAgICAgIGhhZG9vcFVzZXJzVG9EYXRhTGF5ZXIgPSBoYWRvb3BVc2VycyAtPiBEYXRhTGF5ZXIgIkRpcmVjdCBIREZTIHF1ZXJpZXMiCiAgICAgICAgaGFkb29wVXNlcnNUb2hhZG9vcERmc0NsaWVudCA9IGhhZG9vcFVzZXJzIC0+IGhhZG9vcERmc0NsaWVudCAiRGlyZWN0IEhERlMgcXVlcmllcyIKCgogICAgICAgIAogICAgICAgIG1hcFJlZHVjZUxheWVyVG9EYXRhTGF5ZXIgPSBtYXBSZWR1Y2VMYXllciAtPiBEYXRhTGF5ZXIgIlF1ZXJpZXMgZXhpc3RpbmcgZGF0YSIKICAgICAgICBtYXBSZWR1Y2VMYXllclRvRGF0YUxheWVyMiA9IG1hcFJlZHVjZUxheWVyIC0+IERhdGFMYXllciAiV3JpdGVzIE1hcFJlZHVjZSBqb2IgcmVzdWx0cyIKICAgIH0KCgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgaGFkb29wICJDb250ZXh0RGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgoKICAgICAgICBjb250YWluZXIgIkhhZG9vcCIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CgogICAgICAgIGNvbXBvbmVudCBtYXBSZWR1Y2VMYXllciAiTWFwUmVkdWNlQ29tcG9uZW50RGlhZ3JhbSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgZXhjbHVkZSBxdWVyeUxvY2FsaXR5CiAgICAgICAgICAgIGV4Y2x1ZGUgaGFkb29wVXNlcnNUb0RhdGFMYXllcgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IGRhdGFMYXllciAiSERGU0NvbXBvbmVudERpYWdyYW0iIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGV4Y2x1ZGUgaGFkb29wVXNlcnNUb2hhZG9vcEpvYkNsaWVudAogICAgICAgICAgICBleGNsdWRlIGhhZG9vcFVzZXJzVG9tYXBSZWR1Y2VMYXllcgogICAgICAgIH0KCiAgICAgICAgY29tcG9uZW50IHJlc291cmNlTGF5ZXIgIllhcm5Db21wb25lbnREaWFncmFtIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KCiAgICAgICAgZGVwbG95bWVudCAqIGhhZG9vcENsdXN0ZXIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgZXhjbHVkZSBzZW5kc0pvYlJlcXVlc3RzCiAgICAgICAgICAgIGV4Y2x1ZGUgc2NoZWR1bGVzTWFwUmVkdWNlCiAgICAgICAgICAgIGV4Y2x1ZGUgcXVlcnlMb2NhbGl0eQogICAgICAgICAgICBleGNsdWRlIHF1ZXJ5UmVzb3VyY2UgCiAgICAgICAgICAgIGV4Y2x1ZGUgcmVhZElucHV0RGF0YQogICAgICAgICAgICBleGNsdWRlIHBvbGxzRmlsZXMKICAgICAgICAgICAgZXhjbHVkZSBxdWVyaWVzUmVzb3VyY2VVc2FnZQogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiSGFkb29wIFVzZXJzIiB7CiAgICAgICAgICAgICAgICAgICAgd2lkdGggMjUwCiAgICAgICAgICAgICAgICAgICAgaGVpZ2h0IDIwMAogICAgICAgICAgICAgICAgICAgIC8vY29sb3IgIzAwMDAwMAogICAgICAgICAgICAgICAgICAgIGZvbnRTaXplIDEyCiAgICAgICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgIkVsZW1lbnQiIHsKICAgICAgICAgICAgICAgIGZvbnRTaXplIDI4CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGVsZW1lbnQgICJTZW5kcyBUYXNrcyIgewogICAgICAgICAgICAgICAgZm9udFNpemUgNTAKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgdGhlbWUgZGVmYXVsdAogICAgfQogICAgCgp9Cg=="
   },
   "views" : {
     "componentViews" : [ {
       "containerId" : "3",
       "dimensions" : {
-        "height" : 1848,
-        "width" : 2580
+        "height" : 1876,
+        "width" : 2705
       },
       "elements" : [ {
         "id" : "1",
         "x" : 260,
-        "y" : 265
+        "y" : 250
       }, {
         "id" : "4",
-        "x" : 1229,
-        "y" : 238
+        "x" : 1113,
+        "y" : 219
       }, {
         "id" : "5",
-        "x" : 1224,
-        "y" : 688
+        "x" : 1108,
+        "y" : 669
       }, {
         "id" : "6",
-        "x" : 1234,
-        "y" : 1303
+        "x" : 1118,
+        "y" : 1284
       }, {
         "id" : "7",
-        "x" : 154,
-        "y" : 693
+        "x" : 199,
+        "y" : 1286
       }, {
-        "id" : "10",
-        "x" : 2005,
-        "y" : 665
+        "id" : "11",
+        "x" : 2054,
+        "y" : 661
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "MapReduceComponentDiagram",
       "order" : 3,
       "relationships" : [ {
-        "id" : "13"
-      }, {
         "id" : "14"
       }, {
-        "id" : "16"
+        "id" : "15"
       }, {
-        "id" : "20"
+        "id" : "21"
       }, {
-        "id" : "24",
-        "vertices" : [ {
-          "x" : 899,
-          "y" : 1128
-        } ]
+        "id" : "25"
       }, {
-        "id" : "60"
-      }, {
-        "id" : "61"
+        "id" : "63"
       } ]
     }, {
       "containerId" : "7",
       "dimensions" : {
-        "height" : 1748,
-        "width" : 2480
+        "height" : 2148,
+        "width" : 2880
       },
       "elements" : [ {
+        "id" : "1",
+        "x" : 55,
+        "y" : 400
+      }, {
         "id" : "3",
-        "x" : 1725,
-        "y" : 495
+        "x" : 2285,
+        "y" : 360
       }, {
         "id" : "8",
-        "x" : 830,
-        "y" : 830
+        "x" : 595,
+        "y" : 370
       }, {
         "id" : "9",
-        "x" : 830,
-        "y" : 235
+        "x" : 1375,
+        "y" : 365
+      }, {
+        "id" : "10",
+        "x" : 1381,
+        "y" : 1388
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "HDFSComponentDiagram",
       "order" : 4,
-      "paperSize" : "A5_Landscape",
       "relationships" : [ {
-        "id" : "17"
-      }, {
-        "id" : "25"
+        "id" : "18"
       }, {
         "id" : "26"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "65"
       } ]
     }, {
-      "containerId" : "10",
+      "containerId" : "11",
       "dimensions" : {
         "height" : 1748,
         "width" : 2480
       },
       "elements" : [ {
         "id" : "3",
-        "x" : 225,
-        "y" : 215
+        "x" : 350,
+        "y" : 225
       }, {
-        "id" : "11",
+        "id" : "12",
         "x" : 1280,
         "y" : 215
       }, {
-        "id" : "12",
-        "x" : 1295,
-        "y" : 1085
+        "id" : "13",
+        "x" : 1285,
+        "y" : 800
       } ],
       "externalContainerBoundariesVisible" : false,
       "key" : "YarnComponentDiagram",
       "order" : 5,
       "paperSize" : "A5_Landscape",
       "relationships" : [ {
-        "id" : "21"
+        "id" : "22"
       }, {
-        "id" : "27"
+        "id" : "30"
       } ]
     } ],
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "MapReduceComponentDiagram",
+      "lastSavedView" : "Deployment-001",
       "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
@@ -691,9 +732,16 @@
           "shape" : "Person",
           "tag" : "Hadoop Users",
           "width" : 250
+        }, {
+          "fontSize" : 28,
+          "tag" : "Element"
+        }, {
+          "fontSize" : 50,
+          "tag" : "Sends Tasks"
         } ]
       },
-      "terminology" : { }
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
     },
     "containerViews" : [ {
       "dimensions" : {
@@ -713,7 +761,7 @@
         "x" : 925,
         "y" : 1160
       }, {
-        "id" : "10",
+        "id" : "11",
         "x" : 1765,
         "y" : 320
       } ],
@@ -722,25 +770,25 @@
       "key" : "Container-001",
       "order" : 2,
       "relationships" : [ {
-        "id" : "18",
+        "id" : "19",
         "vertices" : [ {
           "x" : 1155,
           "y" : 785
         } ]
       }, {
-        "id" : "22"
-      }, {
-        "id" : "58"
+        "id" : "23"
       }, {
         "id" : "61"
       }, {
-        "id" : "62",
+        "id" : "64"
+      }, {
+        "id" : "66",
         "vertices" : [ {
           "x" : 945,
           "y" : 875
         } ]
       }, {
-        "id" : "63",
+        "id" : "67",
         "vertices" : [ {
           "x" : 1365,
           "y" : 865
@@ -750,109 +798,109 @@
     } ],
     "deploymentViews" : [ {
       "dimensions" : {
-        "height" : 3948,
-        "width" : 4680
+        "height" : 2206,
+        "width" : 3231
       },
       "elements" : [ {
-        "id" : "28",
-        "x" : 0,
-        "y" : 0
-      }, {
-        "id" : "29",
-        "x" : 2910,
-        "y" : 1025
-      }, {
-        "id" : "30",
-        "x" : 0,
-        "y" : 0
-      }, {
         "id" : "31",
-        "x" : 2025,
-        "y" : 1230
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "32",
-        "x" : 0,
-        "y" : 0
+        "x" : 2315,
+        "y" : 366
       }, {
         "id" : "33",
-        "x" : 1160,
-        "y" : 1030
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "34",
-        "x" : 0,
-        "y" : 0
+        "x" : 1435,
+        "y" : 530
       }, {
         "id" : "35",
-        "x" : 1130,
-        "y" : 2510
-      }, {
-        "id" : "36",
-        "x" : 610,
-        "y" : 2505
-      }, {
-        "id" : "38",
-        "x" : 1650,
-        "y" : 2510
-      }, {
-        "id" : "40",
         "x" : 0,
         "y" : 0
       }, {
+        "id" : "36",
+        "x" : 615,
+        "y" : 376
+      }, {
+        "id" : "37",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "38",
+        "x" : 575,
+        "y" : 1406
+      }, {
+        "id" : "39",
+        "x" : 55,
+        "y" : 1401
+      }, {
         "id" : "41",
-        "x" : 2930,
-        "y" : 2500
+        "x" : 1095,
+        "y" : 1406
+      }, {
+        "id" : "43",
+        "x" : 0,
+        "y" : 0
       }, {
         "id" : "44",
-        "x" : 2400,
-        "y" : 2500
+        "x" : 2200,
+        "y" : 1396
       }, {
         "id" : "47",
-        "x" : 3435,
-        "y" : 2500
+        "x" : 1685,
+        "y" : 1396
+      }, {
+        "id" : "50",
+        "x" : 2725,
+        "y" : 1396
       } ],
       "environment" : "Hadoop Cluster Deployment Diagram",
       "generatedKey" : true,
       "key" : "Deployment-001",
       "order" : 6,
       "relationships" : [ {
-        "id" : "50",
+        "id" : "53",
         "vertices" : [ {
-          "x" : 1375,
-          "y" : 2460
+          "x" : 840,
+          "y" : 1370
         } ]
-      }, {
-        "id" : "51",
-        "vertices" : [ {
-          "x" : 3175,
-          "y" : 2460
-        } ]
-      }, {
-        "id" : "52"
-      }, {
-        "id" : "53"
       }, {
         "id" : "54",
         "vertices" : [ {
-          "x" : 870,
-          "y" : 2480
+          "x" : 2450,
+          "y" : 1355
         } ]
       }, {
-        "id" : "55",
-        "vertices" : [ {
-          "x" : 2555,
-          "y" : 2465
-        } ]
+        "id" : "55"
       }, {
-        "id" : "56",
-        "vertices" : [ {
-          "x" : 1925,
-          "y" : 2475
-        } ]
+        "id" : "56"
       }, {
         "id" : "57",
         "vertices" : [ {
-          "x" : 3690,
-          "y" : 2475
+          "x" : 290,
+          "y" : 1370
+        } ]
+      }, {
+        "id" : "58",
+        "vertices" : [ {
+          "x" : 1850,
+          "y" : 1350
+        } ]
+      }, {
+        "id" : "59",
+        "vertices" : [ {
+          "x" : 1345,
+          "y" : 1375
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 2945,
+          "y" : 1365
         } ]
       } ]
     } ],
@@ -875,7 +923,7 @@
       "order" : 1,
       "paperSize" : "A5_Landscape",
       "relationships" : [ {
-        "id" : "59"
+        "id" : "62"
       } ],
       "softwareSystemId" : "2"
     } ]

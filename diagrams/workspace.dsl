@@ -17,8 +17,10 @@ workspace {
             }
 
             dataLayer = container "hadoop-hdfs" "Data Management" {
-                hadoopDataNode = component "Data Node"
+                hadoopDfsClient = component "DFS Client"
                 hadoopNameNode = component "Name Node"
+                hadoopDataNode = component "Data Node"
+                
             }
 
             resourceLayer = container "hadoop-yarn" "Resource Management" {
@@ -26,14 +28,22 @@ workspace {
                 hadoopNodeManager = component "Node Manager"
             }
 
+            
+            //MapReduce Dependencies
             sendsJobRequests = hadoopJobClient -> hadoopJobTracker "Sends job requests"
             schedulesMapReduce = hadoopJobTracker -> hadoopTaskTracker "Schedules Map and Reduce Tasks, Sends Code"
             queryLocality = hadoopJobTracker -> hadoopNameNode "Queries data locality for scheduling"
-            queryResource = hadoopJobTracker -> hadoopResourceManager "Queries resource availability for scheduling"
+            queryResource = hadoopJobTracker -> hadoopResourceManager "Queries resource availability for job scheduling"
             readInputData = hadoopTaskTracker -> hadoopDataNode "Reads input data for MapReduce Operations\n\nWrites Reduce outputs to HDFS"
+            
+            
+            //HDFS Dependencies
             pollsFiles = hadoopNameNode -> hadoopDataNode "Polls to Tracks Files, Server Locality, Replicas"
+            dfsClientQueryMaster = hadoopDfsClient -> hadoopNameNode "Queries data locality"
+            dfsClientQueryNodes = hadoopDfsClient -> hadoopDataNode "Queries files directly"
 
-            queriesResourceUsage = hadoopResourceManager -> hadoopNodeManager "Queries resource usage/availability\nMonitors node heartbeats"
+            //Resource Dependencies
+            queriesResourceUsage = hadoopResourceManager -> hadoopNodeManager "Monitors resource usage/availability\nReceives node heartbeats"
         }
 
 
@@ -99,11 +109,15 @@ workspace {
             }
         }
        
-        hadoopUsers -> mapReduceLayer "Sends MapReduceJobs"
-        hadoopUsers -> hadoopJobClient "Sends MapReduceJobs"
-        hadoopUsers -> DataLayer "Direct HDFS queries"
-        mapReduceLayer -> DataLayer "Queries existing data"
-        mapReduceLayer -> DataLayer "Writes MapReduce job results"
+        hadoopUsersTomapReduceLayer = hadoopUsers -> mapReduceLayer "Sends MapReduceJobs"
+        hadoopUsersTohadoopJobClient = hadoopUsers -> hadoopJobClient "Sends MapReduceJobs"
+        hadoopUsersToDataLayer = hadoopUsers -> DataLayer "Direct HDFS queries"
+        hadoopUsersTohadoopDfsClient = hadoopUsers -> hadoopDfsClient "Direct HDFS queries"
+
+
+        
+        mapReduceLayerToDataLayer = mapReduceLayer -> DataLayer "Queries existing data"
+        mapReduceLayerToDataLayer2 = mapReduceLayer -> DataLayer "Writes MapReduce job results"
     }
 
 
@@ -119,10 +133,14 @@ workspace {
 
         component mapReduceLayer "MapReduceComponentDiagram" {
             include *
+            exclude queryLocality
+            exclude hadoopUsersToDataLayer
         }
 
         component dataLayer "HDFSComponentDiagram" {
             include *
+            exclude hadoopUsersTohadoopJobClient
+            exclude hadoopUsersTomapReduceLayer
         }
 
         component resourceLayer "YarnComponentDiagram" {
@@ -148,7 +166,17 @@ workspace {
                     fontSize 12
                     shape person
             }
+
+            element "Element" {
+                fontSize 28
+            }
+
+            element  "Sends Tasks" {
+                fontSize 50
+            }
         }
+
+        theme default
     }
     
 
