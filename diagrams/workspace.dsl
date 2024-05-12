@@ -2,11 +2,15 @@ workspace {
 
     model {
         hadoopUsers = person "Users" "Software Engineers\nData Engineers\nData Scientists" {
-            tags "Hadoop Users"
+            tags "Hadoop Users"                
+        }
+
+        hadoopUserServices = person "Software Services" "APIs\nservices\nsentient AI" {
+            tags "Hadoop Interacting Services"
                         
         }
  
-        hadoop = softwareSystem "Hadoop" "" "" {
+        hadoop = softwareSystem "Hadoop" "Java Runtime" "Distributed Cluster" {
 
             tags "Hadoop Software System"
 
@@ -30,11 +34,16 @@ workspace {
 
             
             //MapReduce Dependencies
-            sendsJobRequests = hadoopJobClient -> hadoopJobTracker "Sends job requests"
-            schedulesMapReduce = hadoopJobTracker -> hadoopTaskTracker "Schedules Map and Reduce Tasks, Sends Code"
-            queryLocality = hadoopJobTracker -> hadoopNameNode "Queries data locality for scheduling"
-            queryResource = hadoopJobTracker -> hadoopResourceManager "Queries resource availability for job scheduling"
+            sendsJobRequestsHadoop_1_0 = hadoopJobClient -> hadoopJobTracker "Sends job requests"
+            sendsJobRequestsHadoop_2_0 = hadoopJobClient -> resourceLayer "Sends job requests"
+            schedulesMapReduceHadoop_1_0 = hadoopJobTracker -> hadoopTaskTracker "Schedules Map and Reduce Tasks, Sends Code"
+            schedulesMapReduceHadoop_2_0_1 = hadoopJobClient -> hadoopResourceManager "Requests MapReduce job execution"
+            schedulesMapReduceHadoop_2_0_2 = hadoopNodeManager -> hadoopTaskTracker "Executes task containers"
+
+            queryLocalityHadoop_1_0 = hadoopJobTracker -> hadoopNameNode "Queries data locality for scheduling"
+            queryLocalityHadoop_2_0 = hadoopResourceManager -> hadoopNameNode "Queries data locality for scheduling"
             readInputData = hadoopTaskTracker -> hadoopDataNode "Reads input data for MapReduce Operations\n\nWrites Reduce outputs to HDFS"
+
             
             
             //HDFS Dependencies
@@ -44,6 +53,7 @@ workspace {
 
             //Resource Dependencies
             queriesResourceUsage = hadoopResourceManager -> hadoopNodeManager "Monitors resource usage/availability\nReceives node heartbeats"
+            assignsWorkToResources = hadoopResourceManager -> hadoopNodeManager "Assigns tasks to be executed on the node"
         }
 
 
@@ -60,9 +70,9 @@ workspace {
                     }
                 }
 
-                mapreduceMasterNode = deploymentNode "MapReduce Job Master Node" {
+                mapreduceMasterNode = deploymentNode "MapReduce Master Node" {
                     containerInstance mapReduceLayer hadoopJobMasterInstance {
-                        description "JobTracker"
+                        description "JobClient"
                     }
                 }
 
@@ -95,11 +105,11 @@ workspace {
                     }
                 }
 
-                mapreduceMasterNode -> node1 "Sends Tasks"
-                mapreduceMasterNode -> node2 "Sends Tasks"
+                yarnMasterNode -> node1 "Sends Tasks"
+                yarnMasterNode -> node2 "Sends Tasks"
 
-                mapReduceMasterNode -> dataMasterNode "Queries data locality for task scheduling"
-                mapReduceMasterNode -> yarnMasterNode "Queries node query usage for task scheduling"
+                yarnMasterNode -> dataMasterNode "Queries data locality for task scheduling"
+                mapReduceMasterNode -> yarnMasterNode "Sends job execution requests"
 
                 dataMasterNode -> node1 "Polls File allocations"
                 dataMasterNode -> node2 "Polls File allocations"
@@ -108,6 +118,9 @@ workspace {
                 yarnMasterNode -> node2 "Polls CPU and Memory Usage"
             }
         }
+
+        hadoopUsers -> hadoop "Send Data Processing Jobs\n\nReceive Data Processing Results\n\nSend direct data queries\n\nReceive data query results"
+        hadoopUserServices -> hadoop 
        
         hadoopUsersTomapReduceLayer = hadoopUsers -> mapReduceLayer "Sends MapReduceJobs"
         hadoopUsersTohadoopJobClient = hadoopUsers -> hadoopJobClient "Sends MapReduceJobs"
@@ -116,9 +129,11 @@ workspace {
 
 
         
-        mapReduceLayerToDataLayer = mapReduceLayer -> DataLayer "Queries existing data"
-        mapReduceLayerToDataLayer2 = mapReduceLayer -> DataLayer "Writes MapReduce job results"
+        mapReduceLayerToDataLayer = mapReduceLayer -> DataLayer "Queries existing data during task execution"
+        mapReduceLayerToDataLayer2 = mapReduceLayer -> DataLayer "Writes MapReduce task results"
     }
+
+    
 
 
     views {
@@ -129,42 +144,90 @@ workspace {
 
         container "Hadoop" {
             include *
+    
+            exclude sendsJobRequestsHadoop_1_0
+            exclude schedulesMapReduceHadoop_1_0
+            exclude queryLocalityHadoop_1_0
+
         }
 
-        component mapReduceLayer "MapReduceComponentDiagram" {
+        component mapReduceLayer "MapReduce_1_0_ComponentDiagram" {
             include *
-            exclude queryLocality
+            
             exclude hadoopUsersToDataLayer
+            exclude resourceLayer
+            exclude sendsJobRequestsHadoop_2_0
+            exclude schedulesMapReduceHadoop_2_0_1
+            exclude schedulesMapReduceHadoop_2_0_2
+            exclude queryLocalityHadoop_2_0
+
+        }
+
+        component mapReduceLayer "MapReduce_2_0_ComponentDiagram" {
+            include *
+
+            exclude hadoopUsersToDataLayer
+            
+            exclude hadoopJobTracker
+
+            exclude sendsJobRequestsHadoop_1_0
+            exclude schedulesMapReduceHadoop_1_0
+            exclude queryLocalityHadoop_1_0
         }
 
         component dataLayer "HDFSComponentDiagram" {
             include *
             exclude hadoopUsersTohadoopJobClient
             exclude hadoopUsersTomapReduceLayer
+            exclude sendsJobRequestsHadoop_1_0
+            exclude schedulesMapReduceHadoop_1_0
+            exclude queryLocalityHadoop_1_0
         }
 
         component resourceLayer "YarnComponentDiagram" {
             include *
+            exclude sendsJobRequestsHadoop_1_0
+            exclude schedulesMapReduceHadoop_1_0
+            exclude queryLocalityHadoop_1_0
         }
 
         deployment * hadoopCluster {
             include *
-            exclude sendsJobRequests
-            exclude schedulesMapReduce
-            exclude queryLocality
-            exclude queryResource 
+            exclude sendsJobRequestsHadoop_2_0
+            exclude queryLocalityHadoop_2_0
+            exclude schedulesMapReduceHadoop_2_0_1
+            exclude schedulesMapReduceHadoop_2_0_2
+            exclude sendsJobRequestsHadoop_1_0
+            exclude schedulesMapReduceHadoop_1_0
+            exclude queryLocalityHadoop_1_0
             exclude readInputData
             exclude pollsFiles
             exclude queriesResourceUsage
         }
 
         styles {
+            element "Hadoop Software System" {
+                icon https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Hadoop-logo-new.pdf/page1-2500px-Hadoop-logo-new.pdf.jpg
+                //width 250
+                //height 200
+                //color #000000
+                fontSize 20
+                shape RoundedBox
+            }
             element "Hadoop Users" {
                     width 250
                     height 200
                     //color #000000
                     fontSize 12
                     shape person
+            }
+
+            element "Hadoop Interacting Services" {
+                    width 250
+                    height 200
+                    //color #000000
+                    fontSize 12
+                    shape roundedBox
             }
 
             element "Element" {
